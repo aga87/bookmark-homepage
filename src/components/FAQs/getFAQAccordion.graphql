@@ -1,0 +1,13 @@
+query getFaqAccordion {
+  page(id: "63qo1mKjZ1QZIfKzoCLPYa") {
+    frequentlyAskedQuestionsCollection {
+      items {
+        sys {
+          id
+        }
+        question
+        answer
+      }
+    }
+  }
+}

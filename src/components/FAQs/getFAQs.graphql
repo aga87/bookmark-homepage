@@ -1,0 +1,13 @@
+query getFaqs {
+  page(id: "63qo1mKjZ1QZIfKzoCLPYa") {
+    faqIntro {
+      title
+      description
+    }
+    faqCta {
+      label
+      link
+      isPrimaryCta
+    }
+  }
+}
