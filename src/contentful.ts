@@ -1,8 +1,11 @@
+import { gql } from '@apollo/client';
+import * as Apollo from '@apollo/client';
 export type Maybe<T> = T | null;
 export type InputMaybe<T> = Maybe<T>;
 export type Exact<T extends { [key: string]: unknown }> = { [K in keyof T]: T[K] };
 export type MakeOptional<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]?: Maybe<T[SubKey]> };
 export type MakeMaybe<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]: Maybe<T[SubKey]> };
+const defaultOptions = {} as const;
 /** All built-in and custom scalars, mapped to their actual values */
 export type Scalars = {
   ID: string;
@@ -1879,3 +1882,414 @@ export type CfTextBlockNestedFilter = {
   title_not_contains?: InputMaybe<Scalars['String']>;
   title_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
 };
+
+export type GetDownloadIntroQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type GetDownloadIntroQuery = { __typename?: 'Query', page?: { __typename?: 'Page', downloadIntro?: { __typename?: 'TextBlock', title?: string | null | undefined, description?: string | null | undefined } | null | undefined } | null | undefined };
+
+export type GetFaqsQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type GetFaqsQuery = { __typename?: 'Query', page?: { __typename?: 'Page', faqIntro?: { __typename?: 'TextBlock', title?: string | null | undefined, description?: string | null | undefined } | null | undefined, faqCta?: { __typename?: 'Cta', label?: string | null | undefined, link?: string | null | undefined, isPrimaryCta?: boolean | null | undefined } | null | undefined } | null | undefined };
+
+export type GetFeaturesQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type GetFeaturesQuery = { __typename?: 'Query', page?: { __typename?: 'Page', featuresIntro?: { __typename?: 'TextBlock', title?: string | null | undefined, description?: string | null | undefined } | null | undefined } | null | undefined };
+
+export type GetMainHeroQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type GetMainHeroQuery = { __typename?: 'Query', page?: { __typename?: 'Page', mainHero?: { __typename?: 'Hero', imageAlignment?: string | null | undefined, name?: string | null | undefined, title?: string | null | undefined, description?: string | null | undefined, image?: { __typename?: 'Asset', description?: string | null | undefined, url?: string | null | undefined, width?: number | null | undefined, height?: number | null | undefined } | null | undefined, ctAsCollection?: { __typename?: 'HeroCtAsCollection', items: Array<{ __typename?: 'Cta', label?: string | null | undefined, link?: string | null | undefined, isPrimaryCta?: boolean | null | undefined, sys: { __typename?: 'Sys', id: string } } | null | undefined> } | null | undefined } | null | undefined } | null | undefined };
+
+export type GetNewsletterQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type GetNewsletterQuery = { __typename?: 'Query', page?: { __typename?: 'Page', newsletter?: { __typename?: 'Newsletter', title?: string | null | undefined, tagline?: string | null | undefined, inputPlaceholder?: string | null | undefined, ctaText?: string | null | undefined } | null | undefined } | null | undefined };
+
+export type GetFaqAccordionQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type GetFaqAccordionQuery = { __typename?: 'Query', page?: { __typename?: 'Page', frequentlyAskedQuestionsCollection?: { __typename?: 'PageFrequentlyAskedQuestionsCollection', items: Array<{ __typename?: 'Faq', question?: string | null | undefined, answer?: string | null | undefined, sys: { __typename?: 'Sys', id: string } } | null | undefined> } | null | undefined } | null | undefined };
+
+export type GetFeatureTabsQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type GetFeatureTabsQuery = { __typename?: 'Query', page?: { __typename?: 'Page', featureTabsCollection?: { __typename?: 'PageFeatureTabsCollection', items: Array<{ __typename?: 'Tab', tabTitle?: string | null | undefined, tabContent?: { __typename?: 'Hero', name?: string | null | undefined, title?: string | null | undefined, description?: string | null | undefined, imageAlignment?: string | null | undefined, sys: { __typename?: 'Sys', id: string }, image?: { __typename?: 'Asset', description?: string | null | undefined, url?: string | null | undefined, width?: number | null | undefined, height?: number | null | undefined } | null | undefined, ctAsCollection?: { __typename?: 'HeroCtAsCollection', items: Array<{ __typename?: 'Cta', label?: string | null | undefined, link?: string | null | undefined, isPrimaryCta?: boolean | null | undefined, sys: { __typename?: 'Sys', id: string } } | null | undefined> } | null | undefined } | null | undefined } | null | undefined> } | null | undefined } | null | undefined };
+
+export type GetInstallationCardsQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type GetInstallationCardsQuery = { __typename?: 'Query', page?: { __typename?: 'Page', installationCardsCollection?: { __typename?: 'PageInstallationCardsCollection', items: Array<{ __typename?: 'Card', title?: string | null | undefined, version?: string | null | undefined, sys: { __typename?: 'Sys', id: string }, logo?: { __typename?: 'Asset', title?: string | null | undefined, description?: string | null | undefined, url?: string | null | undefined, width?: number | null | undefined, height?: number | null | undefined } | null | undefined, installLink?: { __typename?: 'Cta', label?: string | null | undefined, link?: string | null | undefined, isPrimaryCta?: boolean | null | undefined } | null | undefined } | null | undefined> } | null | undefined } | null | undefined };
+
+
+export const GetDownloadIntroDocument = gql`
+    query getDownloadIntro {
+  page(id: "63qo1mKjZ1QZIfKzoCLPYa") {
+    downloadIntro {
+      title
+      description
+    }
+  }
+}
+    `;
+
+/**
+ * __useGetDownloadIntroQuery__
+ *
+ * To run a query within a React component, call `useGetDownloadIntroQuery` and pass it any options that fit your needs.
+ * When your component renders, `useGetDownloadIntroQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useGetDownloadIntroQuery({
+ *   variables: {
+ *   },
+ * });
+ */
+export function useGetDownloadIntroQuery(baseOptions?: Apollo.QueryHookOptions<GetDownloadIntroQuery, GetDownloadIntroQueryVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useQuery<GetDownloadIntroQuery, GetDownloadIntroQueryVariables>(GetDownloadIntroDocument, options);
+      }
+export function useGetDownloadIntroLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetDownloadIntroQuery, GetDownloadIntroQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return Apollo.useLazyQuery<GetDownloadIntroQuery, GetDownloadIntroQueryVariables>(GetDownloadIntroDocument, options);
+        }
+export type GetDownloadIntroQueryHookResult = ReturnType<typeof useGetDownloadIntroQuery>;
+export type GetDownloadIntroLazyQueryHookResult = ReturnType<typeof useGetDownloadIntroLazyQuery>;
+export type GetDownloadIntroQueryResult = Apollo.QueryResult<GetDownloadIntroQuery, GetDownloadIntroQueryVariables>;
+export const GetFaqsDocument = gql`
+    query getFaqs {
+  page(id: "63qo1mKjZ1QZIfKzoCLPYa") {
+    faqIntro {
+      title
+      description
+    }
+    faqCta {
+      label
+      link
+      isPrimaryCta
+    }
+  }
+}
+    `;
+
+/**
+ * __useGetFaqsQuery__
+ *
+ * To run a query within a React component, call `useGetFaqsQuery` and pass it any options that fit your needs.
+ * When your component renders, `useGetFaqsQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useGetFaqsQuery({
+ *   variables: {
+ *   },
+ * });
+ */
+export function useGetFaqsQuery(baseOptions?: Apollo.QueryHookOptions<GetFaqsQuery, GetFaqsQueryVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useQuery<GetFaqsQuery, GetFaqsQueryVariables>(GetFaqsDocument, options);
+      }
+export function useGetFaqsLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetFaqsQuery, GetFaqsQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return Apollo.useLazyQuery<GetFaqsQuery, GetFaqsQueryVariables>(GetFaqsDocument, options);
+        }
+export type GetFaqsQueryHookResult = ReturnType<typeof useGetFaqsQuery>;
+export type GetFaqsLazyQueryHookResult = ReturnType<typeof useGetFaqsLazyQuery>;
+export type GetFaqsQueryResult = Apollo.QueryResult<GetFaqsQuery, GetFaqsQueryVariables>;
+export const GetFeaturesDocument = gql`
+    query getFeatures {
+  page(id: "63qo1mKjZ1QZIfKzoCLPYa") {
+    featuresIntro {
+      title
+      description
+    }
+  }
+}
+    `;
+
+/**
+ * __useGetFeaturesQuery__
+ *
+ * To run a query within a React component, call `useGetFeaturesQuery` and pass it any options that fit your needs.
+ * When your component renders, `useGetFeaturesQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useGetFeaturesQuery({
+ *   variables: {
+ *   },
+ * });
+ */
+export function useGetFeaturesQuery(baseOptions?: Apollo.QueryHookOptions<GetFeaturesQuery, GetFeaturesQueryVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useQuery<GetFeaturesQuery, GetFeaturesQueryVariables>(GetFeaturesDocument, options);
+      }
+export function useGetFeaturesLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetFeaturesQuery, GetFeaturesQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return Apollo.useLazyQuery<GetFeaturesQuery, GetFeaturesQueryVariables>(GetFeaturesDocument, options);
+        }
+export type GetFeaturesQueryHookResult = ReturnType<typeof useGetFeaturesQuery>;
+export type GetFeaturesLazyQueryHookResult = ReturnType<typeof useGetFeaturesLazyQuery>;
+export type GetFeaturesQueryResult = Apollo.QueryResult<GetFeaturesQuery, GetFeaturesQueryVariables>;
+export const GetMainHeroDocument = gql`
+    query getMainHero {
+  page(id: "63qo1mKjZ1QZIfKzoCLPYa") {
+    mainHero {
+      image {
+        description
+        url
+        width
+        height
+      }
+      imageAlignment
+      name
+      title
+      description
+      ctAsCollection {
+        items {
+          sys {
+            id
+          }
+          label
+          link
+          isPrimaryCta
+        }
+      }
+    }
+  }
+}
+    `;
+
+/**
+ * __useGetMainHeroQuery__
+ *
+ * To run a query within a React component, call `useGetMainHeroQuery` and pass it any options that fit your needs.
+ * When your component renders, `useGetMainHeroQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useGetMainHeroQuery({
+ *   variables: {
+ *   },
+ * });
+ */
+export function useGetMainHeroQuery(baseOptions?: Apollo.QueryHookOptions<GetMainHeroQuery, GetMainHeroQueryVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useQuery<GetMainHeroQuery, GetMainHeroQueryVariables>(GetMainHeroDocument, options);
+      }
+export function useGetMainHeroLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetMainHeroQuery, GetMainHeroQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return Apollo.useLazyQuery<GetMainHeroQuery, GetMainHeroQueryVariables>(GetMainHeroDocument, options);
+        }
+export type GetMainHeroQueryHookResult = ReturnType<typeof useGetMainHeroQuery>;
+export type GetMainHeroLazyQueryHookResult = ReturnType<typeof useGetMainHeroLazyQuery>;
+export type GetMainHeroQueryResult = Apollo.QueryResult<GetMainHeroQuery, GetMainHeroQueryVariables>;
+export const GetNewsletterDocument = gql`
+    query getNewsletter {
+  page(id: "63qo1mKjZ1QZIfKzoCLPYa") {
+    newsletter {
+      title
+      tagline
+      inputPlaceholder
+      ctaText
+    }
+  }
+}
+    `;
+
+/**
+ * __useGetNewsletterQuery__
+ *
+ * To run a query within a React component, call `useGetNewsletterQuery` and pass it any options that fit your needs.
+ * When your component renders, `useGetNewsletterQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useGetNewsletterQuery({
+ *   variables: {
+ *   },
+ * });
+ */
+export function useGetNewsletterQuery(baseOptions?: Apollo.QueryHookOptions<GetNewsletterQuery, GetNewsletterQueryVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useQuery<GetNewsletterQuery, GetNewsletterQueryVariables>(GetNewsletterDocument, options);
+      }
+export function useGetNewsletterLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetNewsletterQuery, GetNewsletterQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return Apollo.useLazyQuery<GetNewsletterQuery, GetNewsletterQueryVariables>(GetNewsletterDocument, options);
+        }
+export type GetNewsletterQueryHookResult = ReturnType<typeof useGetNewsletterQuery>;
+export type GetNewsletterLazyQueryHookResult = ReturnType<typeof useGetNewsletterLazyQuery>;
+export type GetNewsletterQueryResult = Apollo.QueryResult<GetNewsletterQuery, GetNewsletterQueryVariables>;
+export const GetFaqAccordionDocument = gql`
+    query getFaqAccordion {
+  page(id: "63qo1mKjZ1QZIfKzoCLPYa") {
+    frequentlyAskedQuestionsCollection {
+      items {
+        sys {
+          id
+        }
+        question
+        answer
+      }
+    }
+  }
+}
+    `;
+
+/**
+ * __useGetFaqAccordionQuery__
+ *
+ * To run a query within a React component, call `useGetFaqAccordionQuery` and pass it any options that fit your needs.
+ * When your component renders, `useGetFaqAccordionQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useGetFaqAccordionQuery({
+ *   variables: {
+ *   },
+ * });
+ */
+export function useGetFaqAccordionQuery(baseOptions?: Apollo.QueryHookOptions<GetFaqAccordionQuery, GetFaqAccordionQueryVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useQuery<GetFaqAccordionQuery, GetFaqAccordionQueryVariables>(GetFaqAccordionDocument, options);
+      }
+export function useGetFaqAccordionLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetFaqAccordionQuery, GetFaqAccordionQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return Apollo.useLazyQuery<GetFaqAccordionQuery, GetFaqAccordionQueryVariables>(GetFaqAccordionDocument, options);
+        }
+export type GetFaqAccordionQueryHookResult = ReturnType<typeof useGetFaqAccordionQuery>;
+export type GetFaqAccordionLazyQueryHookResult = ReturnType<typeof useGetFaqAccordionLazyQuery>;
+export type GetFaqAccordionQueryResult = Apollo.QueryResult<GetFaqAccordionQuery, GetFaqAccordionQueryVariables>;
+export const GetFeatureTabsDocument = gql`
+    query getFeatureTabs {
+  page(id: "63qo1mKjZ1QZIfKzoCLPYa") {
+    featureTabsCollection {
+      items {
+        tabTitle
+        tabContent {
+          sys {
+            id
+          }
+          image {
+            description
+            url
+            width
+            height
+          }
+          name
+          title
+          description
+          imageAlignment
+          ctAsCollection {
+            items {
+              sys {
+                id
+              }
+              label
+              link
+              isPrimaryCta
+            }
+          }
+        }
+      }
+    }
+  }
+}
+    `;
+
+/**
+ * __useGetFeatureTabsQuery__
+ *
+ * To run a query within a React component, call `useGetFeatureTabsQuery` and pass it any options that fit your needs.
+ * When your component renders, `useGetFeatureTabsQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useGetFeatureTabsQuery({
+ *   variables: {
+ *   },
+ * });
+ */
+export function useGetFeatureTabsQuery(baseOptions?: Apollo.QueryHookOptions<GetFeatureTabsQuery, GetFeatureTabsQueryVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useQuery<GetFeatureTabsQuery, GetFeatureTabsQueryVariables>(GetFeatureTabsDocument, options);
+      }
+export function useGetFeatureTabsLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetFeatureTabsQuery, GetFeatureTabsQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return Apollo.useLazyQuery<GetFeatureTabsQuery, GetFeatureTabsQueryVariables>(GetFeatureTabsDocument, options);
+        }
+export type GetFeatureTabsQueryHookResult = ReturnType<typeof useGetFeatureTabsQuery>;
+export type GetFeatureTabsLazyQueryHookResult = ReturnType<typeof useGetFeatureTabsLazyQuery>;
+export type GetFeatureTabsQueryResult = Apollo.QueryResult<GetFeatureTabsQuery, GetFeatureTabsQueryVariables>;
+export const GetInstallationCardsDocument = gql`
+    query getInstallationCards {
+  page(id: "63qo1mKjZ1QZIfKzoCLPYa") {
+    installationCardsCollection {
+      items {
+        sys {
+          id
+        }
+        logo {
+          title
+          description
+          url
+          width
+          height
+        }
+        title
+        version
+        installLink {
+          label
+          link
+          isPrimaryCta
+        }
+      }
+    }
+  }
+}
+    `;
+
+/**
+ * __useGetInstallationCardsQuery__
+ *
+ * To run a query within a React component, call `useGetInstallationCardsQuery` and pass it any options that fit your needs.
+ * When your component renders, `useGetInstallationCardsQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useGetInstallationCardsQuery({
+ *   variables: {
+ *   },
+ * });
+ */
+export function useGetInstallationCardsQuery(baseOptions?: Apollo.QueryHookOptions<GetInstallationCardsQuery, GetInstallationCardsQueryVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useQuery<GetInstallationCardsQuery, GetInstallationCardsQueryVariables>(GetInstallationCardsDocument, options);
+      }
+export function useGetInstallationCardsLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetInstallationCardsQuery, GetInstallationCardsQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return Apollo.useLazyQuery<GetInstallationCardsQuery, GetInstallationCardsQueryVariables>(GetInstallationCardsDocument, options);
+        }
+export type GetInstallationCardsQueryHookResult = ReturnType<typeof useGetInstallationCardsQuery>;
+export type GetInstallationCardsLazyQueryHookResult = ReturnType<typeof useGetInstallationCardsLazyQuery>;
+export type GetInstallationCardsQueryResult = Apollo.QueryResult<GetInstallationCardsQuery, GetInstallationCardsQueryVariables>;
