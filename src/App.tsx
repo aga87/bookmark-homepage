@@ -1,8 +1,11 @@
 import React from 'react';
 import './scss/index.scss';
+import Homepage from './pages/Homepage';
 
-function App() {
-  return <div>Test</div>;
-}
+const App = (): JSX.Element => (
+  <div>
+    <Homepage />
+  </div>
+);
 
 export default App;

@@ -1,0 +1,26 @@
+query getMainHero {
+  page(id: "63qo1mKjZ1QZIfKzoCLPYa") {
+    mainHero {
+      image {
+        description
+        url
+        width
+        height
+      }
+      imageAlignment
+      name
+      title
+      description
+      ctAsCollection {
+        items {
+          sys {
+            id
+          }
+          label
+          link
+          isPrimaryCta
+        }
+      }
+    }
+  }
+}
