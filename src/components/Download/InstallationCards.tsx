@@ -1,7 +1,7 @@
 import React from 'react';
 import { useGetInstallationCardsQuery } from '../../contentful';
 import CTALink from '../nano/CTALink';
-import { ReactComponent as DottedLine } from '../../svg/icons/bg-dots.svg';
+import { ReactComponent as DottedLine } from '../../svg/bg-dots.svg';
 
 const InstallationCards = () => {
   const { loading, error, data } = useGetInstallationCardsQuery();
