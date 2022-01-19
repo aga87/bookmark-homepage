@@ -1,0 +1,10 @@
+query getNewsletter {
+  page(id: "63qo1mKjZ1QZIfKzoCLPYa") {
+    newsletter {
+      title
+      tagline
+      inputPlaceholder
+      ctaText
+    }
+  }
+}

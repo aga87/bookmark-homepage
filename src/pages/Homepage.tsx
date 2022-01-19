@@ -7,6 +7,7 @@ import Download from '../components/Download/Download';
 import InstallationCards from '../components/Download/InstallationCards';
 import FAQs from '../components/FAQs/FAQs';
 import FAQAccordion from '../components/FAQs/FAQAccordion';
+import Newsletter from '../components/Newsletter/Newsletter';
 
 const Homepage = (): JSX.Element => (
   <div>
@@ -21,6 +22,7 @@ const Homepage = (): JSX.Element => (
     <FAQs>
       <FAQAccordion />
     </FAQs>
+    <Newsletter />
   </div>
 );
 
