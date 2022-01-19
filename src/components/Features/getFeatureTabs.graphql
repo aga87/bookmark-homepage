@@ -1,0 +1,14 @@
+query getFeatureTabs {
+  page(id: "63qo1mKjZ1QZIfKzoCLPYa") {
+    featureTabsCollection {
+      items {
+        tabTitle
+        tabContent {
+          sys {
+            id
+          }
+        }
+      }
+    }
+  }
+}

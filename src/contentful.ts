@@ -1893,6 +1893,16 @@ export type GetFaqsQueryVariables = Exact<{ [key: string]: never; }>;
 
 export type GetFaqsQuery = { __typename?: 'Query', page?: { __typename?: 'Page', faqIntro?: { __typename?: 'TextBlock', title?: string | null | undefined, description?: string | null | undefined } | null | undefined, faqCta?: { __typename?: 'Cta', label?: string | null | undefined, link?: string | null | undefined, isPrimaryCta?: boolean | null | undefined } | null | undefined } | null | undefined };
 
+export type GetFeatureTabPanelsQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type GetFeatureTabPanelsQuery = { __typename?: 'Query', page?: { __typename?: 'Page', featureTabsCollection?: { __typename?: 'PageFeatureTabsCollection', items: Array<{ __typename?: 'Tab', tabContent?: { __typename?: 'Hero', name?: string | null | undefined, title?: string | null | undefined, description?: string | null | undefined, imageAlignment?: string | null | undefined, sys: { __typename?: 'Sys', id: string }, image?: { __typename?: 'Asset', description?: string | null | undefined, url?: string | null | undefined, width?: number | null | undefined, height?: number | null | undefined } | null | undefined, ctAsCollection?: { __typename?: 'HeroCtAsCollection', items: Array<{ __typename?: 'Cta', label?: string | null | undefined, link?: string | null | undefined, isPrimaryCta?: boolean | null | undefined, sys: { __typename?: 'Sys', id: string } } | null | undefined> } | null | undefined } | null | undefined } | null | undefined> } | null | undefined } | null | undefined };
+
+export type GetFeatureTabsQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type GetFeatureTabsQuery = { __typename?: 'Query', page?: { __typename?: 'Page', featureTabsCollection?: { __typename?: 'PageFeatureTabsCollection', items: Array<{ __typename?: 'Tab', tabTitle?: string | null | undefined, tabContent?: { __typename?: 'Hero', name?: string | null | undefined, title?: string | null | undefined, description?: string | null | undefined, imageAlignment?: string | null | undefined, sys: { __typename?: 'Sys', id: string }, image?: { __typename?: 'Asset', description?: string | null | undefined, url?: string | null | undefined, width?: number | null | undefined, height?: number | null | undefined } | null | undefined, ctAsCollection?: { __typename?: 'HeroCtAsCollection', items: Array<{ __typename?: 'Cta', label?: string | null | undefined, link?: string | null | undefined, isPrimaryCta?: boolean | null | undefined, sys: { __typename?: 'Sys', id: string } } | null | undefined> } | null | undefined } | null | undefined } | null | undefined> } | null | undefined } | null | undefined };
+
 export type GetFeaturesQueryVariables = Exact<{ [key: string]: never; }>;
 
 
@@ -1912,11 +1922,6 @@ export type GetFaqAccordionQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 export type GetFaqAccordionQuery = { __typename?: 'Query', page?: { __typename?: 'Page', frequentlyAskedQuestionsCollection?: { __typename?: 'PageFrequentlyAskedQuestionsCollection', items: Array<{ __typename?: 'Faq', question?: string | null | undefined, answer?: string | null | undefined, sys: { __typename?: 'Sys', id: string } } | null | undefined> } | null | undefined } | null | undefined };
-
-export type GetFeatureTabsQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-export type GetFeatureTabsQuery = { __typename?: 'Query', page?: { __typename?: 'Page', featureTabsCollection?: { __typename?: 'PageFeatureTabsCollection', items: Array<{ __typename?: 'Tab', tabTitle?: string | null | undefined, tabContent?: { __typename?: 'Hero', name?: string | null | undefined, title?: string | null | undefined, description?: string | null | undefined, imageAlignment?: string | null | undefined, sys: { __typename?: 'Sys', id: string }, image?: { __typename?: 'Asset', description?: string | null | undefined, url?: string | null | undefined, width?: number | null | undefined, height?: number | null | undefined } | null | undefined, ctAsCollection?: { __typename?: 'HeroCtAsCollection', items: Array<{ __typename?: 'Cta', label?: string | null | undefined, link?: string | null | undefined, isPrimaryCta?: boolean | null | undefined, sys: { __typename?: 'Sys', id: string } } | null | undefined> } | null | undefined } | null | undefined } | null | undefined> } | null | undefined } | null | undefined };
 
 export type GetInstallationCardsQueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -2003,6 +2008,131 @@ export function useGetFaqsLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<Ge
 export type GetFaqsQueryHookResult = ReturnType<typeof useGetFaqsQuery>;
 export type GetFaqsLazyQueryHookResult = ReturnType<typeof useGetFaqsLazyQuery>;
 export type GetFaqsQueryResult = Apollo.QueryResult<GetFaqsQuery, GetFaqsQueryVariables>;
+export const GetFeatureTabPanelsDocument = gql`
+    query getFeatureTabPanels {
+  page(id: "63qo1mKjZ1QZIfKzoCLPYa") {
+    featureTabsCollection {
+      items {
+        tabContent {
+          sys {
+            id
+          }
+          image {
+            description
+            url
+            width
+            height
+          }
+          name
+          title
+          description
+          imageAlignment
+          ctAsCollection {
+            items {
+              sys {
+                id
+              }
+              label
+              link
+              isPrimaryCta
+            }
+          }
+        }
+      }
+    }
+  }
+}
+    `;
+
+/**
+ * __useGetFeatureTabPanelsQuery__
+ *
+ * To run a query within a React component, call `useGetFeatureTabPanelsQuery` and pass it any options that fit your needs.
+ * When your component renders, `useGetFeatureTabPanelsQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useGetFeatureTabPanelsQuery({
+ *   variables: {
+ *   },
+ * });
+ */
+export function useGetFeatureTabPanelsQuery(baseOptions?: Apollo.QueryHookOptions<GetFeatureTabPanelsQuery, GetFeatureTabPanelsQueryVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useQuery<GetFeatureTabPanelsQuery, GetFeatureTabPanelsQueryVariables>(GetFeatureTabPanelsDocument, options);
+      }
+export function useGetFeatureTabPanelsLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetFeatureTabPanelsQuery, GetFeatureTabPanelsQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return Apollo.useLazyQuery<GetFeatureTabPanelsQuery, GetFeatureTabPanelsQueryVariables>(GetFeatureTabPanelsDocument, options);
+        }
+export type GetFeatureTabPanelsQueryHookResult = ReturnType<typeof useGetFeatureTabPanelsQuery>;
+export type GetFeatureTabPanelsLazyQueryHookResult = ReturnType<typeof useGetFeatureTabPanelsLazyQuery>;
+export type GetFeatureTabPanelsQueryResult = Apollo.QueryResult<GetFeatureTabPanelsQuery, GetFeatureTabPanelsQueryVariables>;
+export const GetFeatureTabsDocument = gql`
+    query getFeatureTabs {
+  page(id: "63qo1mKjZ1QZIfKzoCLPYa") {
+    featureTabsCollection {
+      items {
+        tabTitle
+        tabContent {
+          sys {
+            id
+          }
+          image {
+            description
+            url
+            width
+            height
+          }
+          name
+          title
+          description
+          imageAlignment
+          ctAsCollection {
+            items {
+              sys {
+                id
+              }
+              label
+              link
+              isPrimaryCta
+            }
+          }
+        }
+      }
+    }
+  }
+}
+    `;
+
+/**
+ * __useGetFeatureTabsQuery__
+ *
+ * To run a query within a React component, call `useGetFeatureTabsQuery` and pass it any options that fit your needs.
+ * When your component renders, `useGetFeatureTabsQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useGetFeatureTabsQuery({
+ *   variables: {
+ *   },
+ * });
+ */
+export function useGetFeatureTabsQuery(baseOptions?: Apollo.QueryHookOptions<GetFeatureTabsQuery, GetFeatureTabsQueryVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useQuery<GetFeatureTabsQuery, GetFeatureTabsQueryVariables>(GetFeatureTabsDocument, options);
+      }
+export function useGetFeatureTabsLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetFeatureTabsQuery, GetFeatureTabsQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return Apollo.useLazyQuery<GetFeatureTabsQuery, GetFeatureTabsQueryVariables>(GetFeatureTabsDocument, options);
+        }
+export type GetFeatureTabsQueryHookResult = ReturnType<typeof useGetFeatureTabsQuery>;
+export type GetFeatureTabsLazyQueryHookResult = ReturnType<typeof useGetFeatureTabsLazyQuery>;
+export type GetFeatureTabsQueryResult = Apollo.QueryResult<GetFeatureTabsQuery, GetFeatureTabsQueryVariables>;
 export const GetFeaturesDocument = gql`
     query getFeatures {
   page(id: "63qo1mKjZ1QZIfKzoCLPYa") {
@@ -2176,69 +2306,6 @@ export function useGetFaqAccordionLazyQuery(baseOptions?: Apollo.LazyQueryHookOp
 export type GetFaqAccordionQueryHookResult = ReturnType<typeof useGetFaqAccordionQuery>;
 export type GetFaqAccordionLazyQueryHookResult = ReturnType<typeof useGetFaqAccordionLazyQuery>;
 export type GetFaqAccordionQueryResult = Apollo.QueryResult<GetFaqAccordionQuery, GetFaqAccordionQueryVariables>;
-export const GetFeatureTabsDocument = gql`
-    query getFeatureTabs {
-  page(id: "63qo1mKjZ1QZIfKzoCLPYa") {
-    featureTabsCollection {
-      items {
-        tabTitle
-        tabContent {
-          sys {
-            id
-          }
-          image {
-            description
-            url
-            width
-            height
-          }
-          name
-          title
-          description
-          imageAlignment
-          ctAsCollection {
-            items {
-              sys {
-                id
-              }
-              label
-              link
-              isPrimaryCta
-            }
-          }
-        }
-      }
-    }
-  }
-}
-    `;
-
-/**
- * __useGetFeatureTabsQuery__
- *
- * To run a query within a React component, call `useGetFeatureTabsQuery` and pass it any options that fit your needs.
- * When your component renders, `useGetFeatureTabsQuery` returns an object from Apollo Client that contains loading, error, and data properties
- * you can use to render your UI.
- *
- * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
- *
- * @example
- * const { data, loading, error } = useGetFeatureTabsQuery({
- *   variables: {
- *   },
- * });
- */
-export function useGetFeatureTabsQuery(baseOptions?: Apollo.QueryHookOptions<GetFeatureTabsQuery, GetFeatureTabsQueryVariables>) {
-        const options = {...defaultOptions, ...baseOptions}
-        return Apollo.useQuery<GetFeatureTabsQuery, GetFeatureTabsQueryVariables>(GetFeatureTabsDocument, options);
-      }
-export function useGetFeatureTabsLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetFeatureTabsQuery, GetFeatureTabsQueryVariables>) {
-          const options = {...defaultOptions, ...baseOptions}
-          return Apollo.useLazyQuery<GetFeatureTabsQuery, GetFeatureTabsQueryVariables>(GetFeatureTabsDocument, options);
-        }
-export type GetFeatureTabsQueryHookResult = ReturnType<typeof useGetFeatureTabsQuery>;
-export type GetFeatureTabsLazyQueryHookResult = ReturnType<typeof useGetFeatureTabsLazyQuery>;
-export type GetFeatureTabsQueryResult = Apollo.QueryResult<GetFeatureTabsQuery, GetFeatureTabsQueryVariables>;
 export const GetInstallationCardsDocument = gql`
     query getInstallationCards {
   page(id: "63qo1mKjZ1QZIfKzoCLPYa") {

@@ -1,0 +1,8 @@
+query getFeatures {
+  page(id: "63qo1mKjZ1QZIfKzoCLPYa") {
+    featuresIntro {
+      title
+      description
+    }
+  }
+}

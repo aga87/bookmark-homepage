@@ -1,0 +1,33 @@
+query getFeatureTabPanels {
+  page(id: "63qo1mKjZ1QZIfKzoCLPYa") {
+    featureTabsCollection {
+      items {
+        tabContent {
+          sys {
+            id
+          }
+          image {
+            description
+            url
+            width
+            height
+          }
+          name
+          title
+          description
+          imageAlignment
+          ctAsCollection {
+            items {
+              sys {
+                id
+              }
+              label
+              link
+              isPrimaryCta
+            }
+          }
+        }
+      }
+    }
+  }
+}
