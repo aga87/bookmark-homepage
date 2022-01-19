@@ -1,0 +1,25 @@
+query getInstallationCards {
+  page(id: "63qo1mKjZ1QZIfKzoCLPYa") {
+    installationCardsCollection {
+      items {
+        sys {
+          id
+        }
+        logo {
+          title
+          description
+          url
+          width
+          height
+        }
+        title
+        version
+        installLink {
+          label
+          link
+          isPrimaryCta
+        }
+      }
+    }
+  }
+}

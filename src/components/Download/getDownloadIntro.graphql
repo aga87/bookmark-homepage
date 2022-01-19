@@ -1,0 +1,8 @@
+query getDownloadIntro {
+  page(id: "63qo1mKjZ1QZIfKzoCLPYa") {
+    downloadIntro {
+      title
+      description
+    }
+  }
+}
