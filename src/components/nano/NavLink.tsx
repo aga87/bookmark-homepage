@@ -4,19 +4,30 @@ type NavLinkProps = {
   link: string;
   label: string;
   isPrimary: boolean;
+  handleKeyDown?: (e: React.KeyboardEvent<HTMLAnchorElement>) => void;
 };
 
-const NavLink = ({ link, label, isPrimary }: NavLinkProps): JSX.Element => {
-  let className = 'nav-link';
-  if (!isPrimary) {
-    className = `${className} ${className}--secondary`;
+const NavLink = React.forwardRef<HTMLAnchorElement, NavLinkProps>(
+  (
+    { link, label, isPrimary, handleKeyDown }: NavLinkProps,
+    ref
+  ): JSX.Element => {
+    let className = 'nav-link';
+    if (!isPrimary) {
+      className = `${className} ${className}--secondary`;
+    }
+
+    return (
+      <a
+        ref={ref}
+        href={link}
+        className={className}
+        onKeyDown={e => handleKeyDown && handleKeyDown(e)}
+      >
+        {label}
+      </a>
+    );
   }
-
-  return (
-    <a href={link} className={className}>
-      {label}
-    </a>
-  );
-};
+);
 
 export default NavLink;

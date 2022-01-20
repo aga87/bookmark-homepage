@@ -1906,7 +1906,7 @@ export type GetFaqsQuery = { __typename?: 'Query', page?: { __typename?: 'Page',
 export type GetFeatureTabPanelsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type GetFeatureTabPanelsQuery = { __typename?: 'Query', page?: { __typename?: 'Page', featureTabsCollection?: { __typename?: 'PageFeatureTabsCollection', items: Array<{ __typename?: 'Tab', tabContent?: { __typename?: 'Hero', name?: string | null | undefined, title?: string | null | undefined, description?: string | null | undefined, imageAlignment?: string | null | undefined, sys: { __typename?: 'Sys', id: string }, image?: { __typename?: 'Asset', description?: string | null | undefined, url?: string | null | undefined, width?: number | null | undefined, height?: number | null | undefined } | null | undefined, ctAsCollection?: { __typename?: 'HeroCtAsCollection', items: Array<{ __typename?: 'Cta', label?: string | null | undefined, link?: string | null | undefined, isPrimaryCta?: boolean | null | undefined, sys: { __typename?: 'Sys', id: string } } | null | undefined> } | null | undefined } | null | undefined } | null | undefined> } | null | undefined } | null | undefined };
+export type GetFeatureTabPanelsQuery = { __typename?: 'Query', page?: { __typename?: 'Page', featureTabsCollection?: { __typename?: 'PageFeatureTabsCollection', items: Array<{ __typename?: 'Tab', tabContent?: { __typename?: 'Hero', title?: string | null | undefined, description?: string | null | undefined, imageAlignment?: string | null | undefined, sys: { __typename?: 'Sys', id: string }, image?: { __typename?: 'Asset', description?: string | null | undefined, url?: string | null | undefined, width?: number | null | undefined, height?: number | null | undefined } | null | undefined, ctAsCollection?: { __typename?: 'HeroCtAsCollection', items: Array<{ __typename?: 'Cta', label?: string | null | undefined, link?: string | null | undefined, isPrimaryCta?: boolean | null | undefined, sys: { __typename?: 'Sys', id: string } } | null | undefined> } | null | undefined } | null | undefined } | null | undefined> } | null | undefined } | null | undefined };
 
 export type GetFeatureTabsQueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -2139,7 +2139,6 @@ export const GetFeatureTabPanelsDocument = gql`
             width
             height
           }
-          name
           title
           description
           imageAlignment

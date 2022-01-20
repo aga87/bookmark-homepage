@@ -1,0 +1,5 @@
+.nav-link {
+  &:focus {
+    color: $soft-red;
+  }
+}

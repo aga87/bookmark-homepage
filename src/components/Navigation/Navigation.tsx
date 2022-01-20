@@ -1,53 +1,61 @@
 import React from 'react';
 import { useGetNavigationLinksQuery } from '../../contentful';
+import useDropdown from '../../hooks/useDropdown';
 import NavLink from '../nano/NavLink';
 import NavToggleButton from '../nano/NavToggleButton';
 import NavigationSocialLinks from './NavigationSocialLinks';
 
 const Navigation = (): JSX.Element | null => {
   const { loading, error, data } = useGetNavigationLinksQuery();
-  if (loading || error) return null;
-  if (!data?.settings?.navigationBarLinksCollection?.items) return null;
 
-  const { items } = data.settings.navigationBarLinksCollection;
+  const {
+    isExpanded,
+    toggleButtonRef,
+    dropdownItemsRefs,
+    handleDropdownToggleClick,
+    handleDropdownToggleKeyDown,
+    handleDropdownItemKeyDown
+  } = useDropdown(
+    data?.settings?.navigationBarLinksCollection?.items.length || 0
+  );
 
-  const handleNavToggleBtnClick = () => {
-    console.log('Handle click');
-  };
-  const handleNavToggleBtnKeyDown = (
-    e: React.KeyboardEvent<HTMLButtonElement>
-  ) => {
-    console.log('Handle click', e.target);
-  };
+  const navLinks = data?.settings?.navigationBarLinksCollection?.items.map(
+    (item, i) => {
+      if (!item || !item.link || !item.label) return null;
+      const { sys, link, label, isPrimaryCta } = item;
 
-  const links = items.map(item => {
-    if (!item || !item.link || !item.label) return null;
-    const { sys, link, label, isPrimaryCta } = item;
+      return (
+        <li key={sys.id}>
+          <NavLink
+            ref={ref => {
+              dropdownItemsRefs.current[i] = ref;
+            }}
+            link={link}
+            label={label.toUpperCase()}
+            isPrimary={isPrimaryCta as boolean}
+            handleKeyDown={handleDropdownItemKeyDown}
+          />
+        </li>
+      );
+    }
+  );
 
-    return (
-      <li key={sys.id}>
-        <NavLink
-          link={link}
-          label={label}
-          isPrimary={isPrimaryCta as boolean}
-        />
-      </li>
-    );
-  });
-
+  if (loading || error || !navLinks) return null;
   return (
     <nav>
       <NavToggleButton
-        ref={null}
+        ref={toggleButtonRef}
         isExpanded={false}
         id='main-nav-toggle-btn'
         controlledNavId='main-nav'
-        handleClick={handleNavToggleBtnClick}
-        handleKeyDown={handleNavToggleBtnKeyDown}
+        handleClick={handleDropdownToggleClick}
+        handleKeyDown={handleDropdownToggleKeyDown}
       />
-      <ul id='main-nav' aria-labelledby='main-nav-toggle-btn'>
-        {links}
-      </ul>
+      {isExpanded && (
+        <ul id='main-nav' aria-labelledby='main-nav-toggle-btn'>
+          {navLinks}
+        </ul>
+      )}
       <NavigationSocialLinks />
     </nav>
   );
