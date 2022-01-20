@@ -1,42 +1,39 @@
 import React from 'react';
 import { useGetFaqAccordionQuery } from '../../contentful';
-import ToggleButton from '../nano/ToggleButton';
+import useRovingFocus from '../../hooks/useRovingFocus';
+import FAQ from './FAQ';
 
 const FAQAccordion = () => {
   const { loading, error, data } = useGetFaqAccordionQuery();
 
-  if (loading || error) return null;
-  if (!data?.page?.frequentlyAskedQuestionsCollection?.items) return null;
+  const { widgetItemsRefs, handleKeyDown } = useRovingFocus(
+    data?.page?.frequentlyAskedQuestionsCollection?.items.length || 0,
+    true
+  );
 
-  const { items } = data.page.frequentlyAskedQuestionsCollection;
+  const accordion = data?.page?.frequentlyAskedQuestionsCollection?.items.map(
+    (item, i: number) => {
+      if (!item || !item.question || !item.answer) return null;
+      const { question, answer } = item;
+      const { id } = item.sys;
 
-  const handleClick = () => {
-    console.log('click');
-  };
-
-  const accordion = items.map(item => {
-    if (!item || !item.question || !item.answer) return null;
-    const { question, answer } = item;
-    const { id } = item.sys;
-
-    return (
-      <div key={id}>
-        <h3>
-          <ToggleButton
-            label={question}
-            isExpanded={false}
+      return (
+        <div key={id}>
+          <FAQ
+            ref={ref => {
+              widgetItemsRefs.current[i] = ref;
+            }}
+            question={question}
+            answer={answer}
             id={id}
-            controlledRegionId={`region-${id}`}
-            handleClick={handleClick}
+            handleKeyDown={handleKeyDown}
           />
-        </h3>
-        <div id={`region-${id}`} role='region' aria-labelledby={id}>
-          <p>{answer}</p>
         </div>
-      </div>
-    );
-  });
+      );
+    }
+  );
 
+  if (loading || error || !accordion) return null;
   return <div>{accordion}</div>;
 };
 

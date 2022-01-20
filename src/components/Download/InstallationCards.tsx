@@ -6,12 +6,7 @@ import { ReactComponent as DottedLine } from '../../svg/bg-dots.svg';
 const InstallationCards = () => {
   const { loading, error, data } = useGetInstallationCardsQuery();
 
-  if (loading || error) return null;
-  if (!data?.page?.installationCardsCollection?.items) return null;
-
-  const { items } = data.page.installationCardsCollection;
-
-  const cards = items.map(item => {
+  const cards = data?.page?.installationCardsCollection?.items.map(item => {
     if (!item) return null;
     const { logo, title, version, installLink } = item;
     return (
@@ -19,6 +14,7 @@ const InstallationCards = () => {
         {logo && logo.url && (
           <img
             src={logo.url}
+            title={logo.title || ''}
             alt={logo.description || ''}
             width={logo.width || ''}
             height={logo.height || ''}
@@ -37,6 +33,8 @@ const InstallationCards = () => {
       </li>
     );
   });
+
+  if (loading || error || !cards) return null;
 
   return <ul>{cards}</ul>;
 };

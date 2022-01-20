@@ -4,9 +4,7 @@ import { useGetDownloadIntroQuery } from '../../contentful';
 const Download: React.FC = ({ children }): JSX.Element | null => {
   const { loading, error, data } = useGetDownloadIntroQuery();
 
-  if (loading || error) return null;
-  if (!data?.page?.downloadIntro) return null;
-
+  if (loading || error || !data?.page?.downloadIntro) return null;
   const { title, description } = data.page.downloadIntro;
 
   return (

@@ -2,6 +2,7 @@ query getMainHero {
   page(id: "63qo1mKjZ1QZIfKzoCLPYa") {
     mainHero {
       image {
+        title
         description
         url
         width

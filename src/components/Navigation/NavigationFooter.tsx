@@ -5,12 +5,8 @@ import NavigationSocialLinks from './NavigationSocialLinks';
 
 const NavigationFooter = (): JSX.Element | null => {
   const { loading, error, data } = useGetNavigationFooterLinksQuery();
-  if (loading || error) return null;
-  if (!data?.settings?.footerLinksCollection?.items) return null;
 
-  const { items } = data.settings.footerLinksCollection;
-
-  const footerLinks = items.map(item => {
+  const footerLinks = data?.settings?.footerLinksCollection?.items.map(item => {
     if (!item || !item.link || !item.label) return null;
     const { sys, link, label, isPrimaryCta } = item;
 
@@ -25,6 +21,7 @@ const NavigationFooter = (): JSX.Element | null => {
     );
   });
 
+  if (loading || error || !footerLinks) return null;
   return (
     <nav aria-label='secondary'>
       <ul>{footerLinks}</ul>

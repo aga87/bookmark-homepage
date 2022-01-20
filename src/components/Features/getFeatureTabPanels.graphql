@@ -12,7 +12,6 @@ query getFeatureTabPanels {
             width
             height
           }
-          name
           title
           description
           imageAlignment

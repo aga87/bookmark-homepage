@@ -2,18 +2,21 @@ import React from 'react';
 import { useGetFeatureTabPanelsQuery } from '../../contentful';
 import CTALink from '../nano/CTALink';
 
-const FeatureTabPanels = (): JSX.Element | null => {
+type FeatureTabPanelsProps = {
+  selectedTab: number;
+};
+
+const FeatureTabPanels = ({
+  selectedTab
+}: FeatureTabPanelsProps): JSX.Element | null => {
   const { loading, error, data } = useGetFeatureTabPanelsQuery();
 
-  if (loading || error) return null;
-  if (!data?.page?.featureTabsCollection?.items) return null;
-
-  const { items } = data.page.featureTabsCollection;
-
-  const tabPanels = items.map(item => {
+  const tabPanels = data?.page?.featureTabsCollection?.items.map((item, i) => {
     if (!item?.tabContent) return null;
     const { id } = item.tabContent.sys;
     const { image, title, description, ctAsCollection } = item.tabContent;
+    // Render only selected tab
+    if (selectedTab !== i) return null;
 
     const tabCTAs = ctAsCollection?.items?.map(tabItem => {
       if (!tabItem || !tabItem.label || !tabItem.link) return null;
@@ -30,9 +33,6 @@ const FeatureTabPanels = (): JSX.Element | null => {
 
     return (
       <div role='tabpanel' id={id} key={id}>
-        {/* FIXME: desktop image for tab2 and tab2 does not match design (it's cropped). 
-        Local svg can be used as a backup plan. 
-        Mobile preview of tab2 and tab3 is unavailable. */}
         {image && image.url && (
           <img
             src={image.url}
@@ -48,6 +48,7 @@ const FeatureTabPanels = (): JSX.Element | null => {
     );
   });
 
+  if (loading || error || !tabPanels) return null;
   return <div>{tabPanels}</div>;
 };
 

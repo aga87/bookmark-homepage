@@ -5,9 +5,7 @@ import CTALink from '../nano/CTALink';
 const MainHero = (): JSX.Element | null => {
   const { loading, error, data } = useGetMainHeroQuery();
 
-  if (loading || error) return null;
-  if (!data?.page?.mainHero) return null;
-
+  if (loading || error || !data?.page?.mainHero) return null;
   const { image, title, description, ctAsCollection } = data.page.mainHero;
 
   const CTAs = ctAsCollection?.items.map(cta => {
@@ -28,6 +26,7 @@ const MainHero = (): JSX.Element | null => {
       {image && image.url && (
         <img
           src={image.url}
+          title={image.title || ''}
           alt={image.description || ''}
           width={image.width || ''}
           height={image.height || ''}

@@ -5,10 +5,8 @@ import { ReactComponent as FacebookIcon } from '../../svg/icon-facebook.svg';
 
 const NavigationSocialLinks = (): JSX.Element | null => {
   const { loading, error, data } = useGetNavigationSocialLinksQuery();
-  if (loading || error) return null;
 
-  if (!data?.settings) return null;
-
+  if (loading || error || !data?.settings) return null;
   const { twitterLink, facebookLink } = data.settings;
 
   return (
