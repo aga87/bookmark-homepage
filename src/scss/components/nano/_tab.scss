@@ -1,0 +1,9 @@
+.tab {
+  &:hover,
+  &:focus {
+    color: $soft-red;
+  }
+  &.tab--selected {
+    border-bottom: 2px solid $soft-red;
+  }
+}
