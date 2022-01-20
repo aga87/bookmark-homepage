@@ -3,9 +3,8 @@ import { useGetLogoQuery } from '../../../contentful';
 
 const Logo = (): JSX.Element | null => {
   const { loading, error, data } = useGetLogoQuery();
-  if (loading || error) return null;
-  if (!data?.settings?.logo) return null;
 
+  if (loading || error || !data?.settings?.logo) return null;
   const { title, description, url, width, height } = data.settings.logo;
   if (!url) return null;
 
