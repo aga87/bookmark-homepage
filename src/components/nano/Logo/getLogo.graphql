@@ -1,0 +1,11 @@
+query getLogo {
+  settings(id: "4gDi7WpHy49PbhMSEiSgJF") {
+    logo {
+      title
+      description
+      url
+      width
+      height
+    }
+  }
+}
