@@ -14,6 +14,7 @@ const InstallationCards = () => {
         {logo && logo.url && (
           <img
             src={logo.url}
+            title={logo.title || ''}
             alt={logo.description || ''}
             width={logo.width || ''}
             height={logo.height || ''}

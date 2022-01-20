@@ -26,6 +26,7 @@ const MainHero = (): JSX.Element | null => {
       {image && image.url && (
         <img
           src={image.url}
+          title={image.title || ''}
           alt={image.description || ''}
           width={image.width || ''}
           height={image.height || ''}
