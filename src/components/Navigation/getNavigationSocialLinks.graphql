@@ -1,0 +1,6 @@
+query getNavigationSocialLinks {
+  settings(id: "4gDi7WpHy49PbhMSEiSgJF") {
+    twitterLink
+    facebookLink
+  }
+}

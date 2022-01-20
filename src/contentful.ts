@@ -1888,6 +1888,16 @@ export type GetDownloadIntroQueryVariables = Exact<{ [key: string]: never; }>;
 
 export type GetDownloadIntroQuery = { __typename?: 'Query', page?: { __typename?: 'Page', downloadIntro?: { __typename?: 'TextBlock', title?: string | null | undefined, description?: string | null | undefined } | null | undefined } | null | undefined };
 
+export type GetInstallationCardsQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type GetInstallationCardsQuery = { __typename?: 'Query', page?: { __typename?: 'Page', installationCardsCollection?: { __typename?: 'PageInstallationCardsCollection', items: Array<{ __typename?: 'Card', title?: string | null | undefined, version?: string | null | undefined, sys: { __typename?: 'Sys', id: string }, logo?: { __typename?: 'Asset', title?: string | null | undefined, description?: string | null | undefined, url?: string | null | undefined, width?: number | null | undefined, height?: number | null | undefined } | null | undefined, installLink?: { __typename?: 'Cta', label?: string | null | undefined, link?: string | null | undefined, isPrimaryCta?: boolean | null | undefined } | null | undefined } | null | undefined> } | null | undefined } | null | undefined };
+
+export type GetFaqAccordionQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type GetFaqAccordionQuery = { __typename?: 'Query', page?: { __typename?: 'Page', frequentlyAskedQuestionsCollection?: { __typename?: 'PageFrequentlyAskedQuestionsCollection', items: Array<{ __typename?: 'Faq', question?: string | null | undefined, answer?: string | null | undefined, sys: { __typename?: 'Sys', id: string } } | null | undefined> } | null | undefined } | null | undefined };
+
 export type GetFaqsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
@@ -1901,7 +1911,7 @@ export type GetFeatureTabPanelsQuery = { __typename?: 'Query', page?: { __typena
 export type GetFeatureTabsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type GetFeatureTabsQuery = { __typename?: 'Query', page?: { __typename?: 'Page', featureTabsCollection?: { __typename?: 'PageFeatureTabsCollection', items: Array<{ __typename?: 'Tab', tabTitle?: string | null | undefined, tabContent?: { __typename?: 'Hero', name?: string | null | undefined, title?: string | null | undefined, description?: string | null | undefined, imageAlignment?: string | null | undefined, sys: { __typename?: 'Sys', id: string }, image?: { __typename?: 'Asset', description?: string | null | undefined, url?: string | null | undefined, width?: number | null | undefined, height?: number | null | undefined } | null | undefined, ctAsCollection?: { __typename?: 'HeroCtAsCollection', items: Array<{ __typename?: 'Cta', label?: string | null | undefined, link?: string | null | undefined, isPrimaryCta?: boolean | null | undefined, sys: { __typename?: 'Sys', id: string } } | null | undefined> } | null | undefined } | null | undefined } | null | undefined> } | null | undefined } | null | undefined };
+export type GetFeatureTabsQuery = { __typename?: 'Query', page?: { __typename?: 'Page', featureTabsCollection?: { __typename?: 'PageFeatureTabsCollection', items: Array<{ __typename?: 'Tab', tabTitle?: string | null | undefined, tabContent?: { __typename?: 'Hero', sys: { __typename?: 'Sys', id: string } } | null | undefined } | null | undefined> } | null | undefined } | null | undefined };
 
 export type GetFeaturesQueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -1913,20 +1923,30 @@ export type GetMainHeroQueryVariables = Exact<{ [key: string]: never; }>;
 
 export type GetMainHeroQuery = { __typename?: 'Query', page?: { __typename?: 'Page', mainHero?: { __typename?: 'Hero', imageAlignment?: string | null | undefined, name?: string | null | undefined, title?: string | null | undefined, description?: string | null | undefined, image?: { __typename?: 'Asset', description?: string | null | undefined, url?: string | null | undefined, width?: number | null | undefined, height?: number | null | undefined } | null | undefined, ctAsCollection?: { __typename?: 'HeroCtAsCollection', items: Array<{ __typename?: 'Cta', label?: string | null | undefined, link?: string | null | undefined, isPrimaryCta?: boolean | null | undefined, sys: { __typename?: 'Sys', id: string } } | null | undefined> } | null | undefined } | null | undefined } | null | undefined };
 
+export type GetNavigationFooterLinksQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type GetNavigationFooterLinksQuery = { __typename?: 'Query', settings?: { __typename?: 'Settings', footerLinksCollection?: { __typename?: 'SettingsFooterLinksCollection', items: Array<{ __typename?: 'Cta', label?: string | null | undefined, link?: string | null | undefined, isPrimaryCta?: boolean | null | undefined, sys: { __typename?: 'Sys', id: string } } | null | undefined> } | null | undefined } | null | undefined };
+
+export type GetNavigationLinksQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type GetNavigationLinksQuery = { __typename?: 'Query', settings?: { __typename?: 'Settings', navigationBarLinksCollection?: { __typename?: 'SettingsNavigationBarLinksCollection', items: Array<{ __typename?: 'Cta', link?: string | null | undefined, label?: string | null | undefined, isPrimaryCta?: boolean | null | undefined, sys: { __typename?: 'Sys', id: string } } | null | undefined> } | null | undefined } | null | undefined };
+
+export type GetNavigationSocialLinksQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type GetNavigationSocialLinksQuery = { __typename?: 'Query', settings?: { __typename?: 'Settings', twitterLink?: string | null | undefined, facebookLink?: string | null | undefined } | null | undefined };
+
 export type GetNewsletterQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 export type GetNewsletterQuery = { __typename?: 'Query', page?: { __typename?: 'Page', newsletter?: { __typename?: 'Newsletter', title?: string | null | undefined, tagline?: string | null | undefined, inputPlaceholder?: string | null | undefined, ctaText?: string | null | undefined } | null | undefined } | null | undefined };
 
-export type GetFaqAccordionQueryVariables = Exact<{ [key: string]: never; }>;
+export type GetLogoQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type GetFaqAccordionQuery = { __typename?: 'Query', page?: { __typename?: 'Page', frequentlyAskedQuestionsCollection?: { __typename?: 'PageFrequentlyAskedQuestionsCollection', items: Array<{ __typename?: 'Faq', question?: string | null | undefined, answer?: string | null | undefined, sys: { __typename?: 'Sys', id: string } } | null | undefined> } | null | undefined } | null | undefined };
-
-export type GetInstallationCardsQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-export type GetInstallationCardsQuery = { __typename?: 'Query', page?: { __typename?: 'Page', installationCardsCollection?: { __typename?: 'PageInstallationCardsCollection', items: Array<{ __typename?: 'Card', title?: string | null | undefined, version?: string | null | undefined, sys: { __typename?: 'Sys', id: string }, logo?: { __typename?: 'Asset', title?: string | null | undefined, description?: string | null | undefined, url?: string | null | undefined, width?: number | null | undefined, height?: number | null | undefined } | null | undefined, installLink?: { __typename?: 'Cta', label?: string | null | undefined, link?: string | null | undefined, isPrimaryCta?: boolean | null | undefined } | null | undefined } | null | undefined> } | null | undefined } | null | undefined };
+export type GetLogoQuery = { __typename?: 'Query', settings?: { __typename?: 'Settings', logo?: { __typename?: 'Asset', title?: string | null | undefined, description?: string | null | undefined, url?: string | null | undefined, width?: number | null | undefined, height?: number | null | undefined } | null | undefined } | null | undefined };
 
 
 export const GetDownloadIntroDocument = gql`
@@ -1966,6 +1986,102 @@ export function useGetDownloadIntroLazyQuery(baseOptions?: Apollo.LazyQueryHookO
 export type GetDownloadIntroQueryHookResult = ReturnType<typeof useGetDownloadIntroQuery>;
 export type GetDownloadIntroLazyQueryHookResult = ReturnType<typeof useGetDownloadIntroLazyQuery>;
 export type GetDownloadIntroQueryResult = Apollo.QueryResult<GetDownloadIntroQuery, GetDownloadIntroQueryVariables>;
+export const GetInstallationCardsDocument = gql`
+    query getInstallationCards {
+  page(id: "63qo1mKjZ1QZIfKzoCLPYa") {
+    installationCardsCollection {
+      items {
+        sys {
+          id
+        }
+        logo {
+          title
+          description
+          url
+          width
+          height
+        }
+        title
+        version
+        installLink {
+          label
+          link
+          isPrimaryCta
+        }
+      }
+    }
+  }
+}
+    `;
+
+/**
+ * __useGetInstallationCardsQuery__
+ *
+ * To run a query within a React component, call `useGetInstallationCardsQuery` and pass it any options that fit your needs.
+ * When your component renders, `useGetInstallationCardsQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useGetInstallationCardsQuery({
+ *   variables: {
+ *   },
+ * });
+ */
+export function useGetInstallationCardsQuery(baseOptions?: Apollo.QueryHookOptions<GetInstallationCardsQuery, GetInstallationCardsQueryVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useQuery<GetInstallationCardsQuery, GetInstallationCardsQueryVariables>(GetInstallationCardsDocument, options);
+      }
+export function useGetInstallationCardsLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetInstallationCardsQuery, GetInstallationCardsQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return Apollo.useLazyQuery<GetInstallationCardsQuery, GetInstallationCardsQueryVariables>(GetInstallationCardsDocument, options);
+        }
+export type GetInstallationCardsQueryHookResult = ReturnType<typeof useGetInstallationCardsQuery>;
+export type GetInstallationCardsLazyQueryHookResult = ReturnType<typeof useGetInstallationCardsLazyQuery>;
+export type GetInstallationCardsQueryResult = Apollo.QueryResult<GetInstallationCardsQuery, GetInstallationCardsQueryVariables>;
+export const GetFaqAccordionDocument = gql`
+    query getFaqAccordion {
+  page(id: "63qo1mKjZ1QZIfKzoCLPYa") {
+    frequentlyAskedQuestionsCollection {
+      items {
+        sys {
+          id
+        }
+        question
+        answer
+      }
+    }
+  }
+}
+    `;
+
+/**
+ * __useGetFaqAccordionQuery__
+ *
+ * To run a query within a React component, call `useGetFaqAccordionQuery` and pass it any options that fit your needs.
+ * When your component renders, `useGetFaqAccordionQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useGetFaqAccordionQuery({
+ *   variables: {
+ *   },
+ * });
+ */
+export function useGetFaqAccordionQuery(baseOptions?: Apollo.QueryHookOptions<GetFaqAccordionQuery, GetFaqAccordionQueryVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useQuery<GetFaqAccordionQuery, GetFaqAccordionQueryVariables>(GetFaqAccordionDocument, options);
+      }
+export function useGetFaqAccordionLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetFaqAccordionQuery, GetFaqAccordionQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return Apollo.useLazyQuery<GetFaqAccordionQuery, GetFaqAccordionQueryVariables>(GetFaqAccordionDocument, options);
+        }
+export type GetFaqAccordionQueryHookResult = ReturnType<typeof useGetFaqAccordionQuery>;
+export type GetFaqAccordionLazyQueryHookResult = ReturnType<typeof useGetFaqAccordionLazyQuery>;
+export type GetFaqAccordionQueryResult = Apollo.QueryResult<GetFaqAccordionQuery, GetFaqAccordionQueryVariables>;
 export const GetFaqsDocument = gql`
     query getFaqs {
   page(id: "63qo1mKjZ1QZIfKzoCLPYa") {
@@ -2079,26 +2195,6 @@ export const GetFeatureTabsDocument = gql`
         tabContent {
           sys {
             id
-          }
-          image {
-            description
-            url
-            width
-            height
-          }
-          name
-          title
-          description
-          imageAlignment
-          ctAsCollection {
-            items {
-              sys {
-                id
-              }
-              label
-              link
-              isPrimaryCta
-            }
           }
         }
       }
@@ -2225,6 +2321,127 @@ export function useGetMainHeroLazyQuery(baseOptions?: Apollo.LazyQueryHookOption
 export type GetMainHeroQueryHookResult = ReturnType<typeof useGetMainHeroQuery>;
 export type GetMainHeroLazyQueryHookResult = ReturnType<typeof useGetMainHeroLazyQuery>;
 export type GetMainHeroQueryResult = Apollo.QueryResult<GetMainHeroQuery, GetMainHeroQueryVariables>;
+export const GetNavigationFooterLinksDocument = gql`
+    query getNavigationFooterLinks {
+  settings(id: "4gDi7WpHy49PbhMSEiSgJF") {
+    footerLinksCollection {
+      items {
+        sys {
+          id
+        }
+        label
+        link
+        isPrimaryCta
+      }
+    }
+  }
+}
+    `;
+
+/**
+ * __useGetNavigationFooterLinksQuery__
+ *
+ * To run a query within a React component, call `useGetNavigationFooterLinksQuery` and pass it any options that fit your needs.
+ * When your component renders, `useGetNavigationFooterLinksQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useGetNavigationFooterLinksQuery({
+ *   variables: {
+ *   },
+ * });
+ */
+export function useGetNavigationFooterLinksQuery(baseOptions?: Apollo.QueryHookOptions<GetNavigationFooterLinksQuery, GetNavigationFooterLinksQueryVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useQuery<GetNavigationFooterLinksQuery, GetNavigationFooterLinksQueryVariables>(GetNavigationFooterLinksDocument, options);
+      }
+export function useGetNavigationFooterLinksLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetNavigationFooterLinksQuery, GetNavigationFooterLinksQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return Apollo.useLazyQuery<GetNavigationFooterLinksQuery, GetNavigationFooterLinksQueryVariables>(GetNavigationFooterLinksDocument, options);
+        }
+export type GetNavigationFooterLinksQueryHookResult = ReturnType<typeof useGetNavigationFooterLinksQuery>;
+export type GetNavigationFooterLinksLazyQueryHookResult = ReturnType<typeof useGetNavigationFooterLinksLazyQuery>;
+export type GetNavigationFooterLinksQueryResult = Apollo.QueryResult<GetNavigationFooterLinksQuery, GetNavigationFooterLinksQueryVariables>;
+export const GetNavigationLinksDocument = gql`
+    query getNavigationLinks {
+  settings(id: "4gDi7WpHy49PbhMSEiSgJF") {
+    navigationBarLinksCollection {
+      items {
+        sys {
+          id
+        }
+        link
+        label
+        isPrimaryCta
+      }
+    }
+  }
+}
+    `;
+
+/**
+ * __useGetNavigationLinksQuery__
+ *
+ * To run a query within a React component, call `useGetNavigationLinksQuery` and pass it any options that fit your needs.
+ * When your component renders, `useGetNavigationLinksQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useGetNavigationLinksQuery({
+ *   variables: {
+ *   },
+ * });
+ */
+export function useGetNavigationLinksQuery(baseOptions?: Apollo.QueryHookOptions<GetNavigationLinksQuery, GetNavigationLinksQueryVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useQuery<GetNavigationLinksQuery, GetNavigationLinksQueryVariables>(GetNavigationLinksDocument, options);
+      }
+export function useGetNavigationLinksLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetNavigationLinksQuery, GetNavigationLinksQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return Apollo.useLazyQuery<GetNavigationLinksQuery, GetNavigationLinksQueryVariables>(GetNavigationLinksDocument, options);
+        }
+export type GetNavigationLinksQueryHookResult = ReturnType<typeof useGetNavigationLinksQuery>;
+export type GetNavigationLinksLazyQueryHookResult = ReturnType<typeof useGetNavigationLinksLazyQuery>;
+export type GetNavigationLinksQueryResult = Apollo.QueryResult<GetNavigationLinksQuery, GetNavigationLinksQueryVariables>;
+export const GetNavigationSocialLinksDocument = gql`
+    query getNavigationSocialLinks {
+  settings(id: "4gDi7WpHy49PbhMSEiSgJF") {
+    twitterLink
+    facebookLink
+  }
+}
+    `;
+
+/**
+ * __useGetNavigationSocialLinksQuery__
+ *
+ * To run a query within a React component, call `useGetNavigationSocialLinksQuery` and pass it any options that fit your needs.
+ * When your component renders, `useGetNavigationSocialLinksQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useGetNavigationSocialLinksQuery({
+ *   variables: {
+ *   },
+ * });
+ */
+export function useGetNavigationSocialLinksQuery(baseOptions?: Apollo.QueryHookOptions<GetNavigationSocialLinksQuery, GetNavigationSocialLinksQueryVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useQuery<GetNavigationSocialLinksQuery, GetNavigationSocialLinksQueryVariables>(GetNavigationSocialLinksDocument, options);
+      }
+export function useGetNavigationSocialLinksLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetNavigationSocialLinksQuery, GetNavigationSocialLinksQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return Apollo.useLazyQuery<GetNavigationSocialLinksQuery, GetNavigationSocialLinksQueryVariables>(GetNavigationSocialLinksDocument, options);
+        }
+export type GetNavigationSocialLinksQueryHookResult = ReturnType<typeof useGetNavigationSocialLinksQuery>;
+export type GetNavigationSocialLinksLazyQueryHookResult = ReturnType<typeof useGetNavigationSocialLinksLazyQuery>;
+export type GetNavigationSocialLinksQueryResult = Apollo.QueryResult<GetNavigationSocialLinksQuery, GetNavigationSocialLinksQueryVariables>;
 export const GetNewsletterDocument = gql`
     query getNewsletter {
   page(id: "63qo1mKjZ1QZIfKzoCLPYa") {
@@ -2264,99 +2481,43 @@ export function useGetNewsletterLazyQuery(baseOptions?: Apollo.LazyQueryHookOpti
 export type GetNewsletterQueryHookResult = ReturnType<typeof useGetNewsletterQuery>;
 export type GetNewsletterLazyQueryHookResult = ReturnType<typeof useGetNewsletterLazyQuery>;
 export type GetNewsletterQueryResult = Apollo.QueryResult<GetNewsletterQuery, GetNewsletterQueryVariables>;
-export const GetFaqAccordionDocument = gql`
-    query getFaqAccordion {
-  page(id: "63qo1mKjZ1QZIfKzoCLPYa") {
-    frequentlyAskedQuestionsCollection {
-      items {
-        sys {
-          id
-        }
-        question
-        answer
-      }
+export const GetLogoDocument = gql`
+    query getLogo {
+  settings(id: "4gDi7WpHy49PbhMSEiSgJF") {
+    logo {
+      title
+      description
+      url
+      width
+      height
     }
   }
 }
     `;
 
 /**
- * __useGetFaqAccordionQuery__
+ * __useGetLogoQuery__
  *
- * To run a query within a React component, call `useGetFaqAccordionQuery` and pass it any options that fit your needs.
- * When your component renders, `useGetFaqAccordionQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * To run a query within a React component, call `useGetLogoQuery` and pass it any options that fit your needs.
+ * When your component renders, `useGetLogoQuery` returns an object from Apollo Client that contains loading, error, and data properties
  * you can use to render your UI.
  *
  * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
  *
  * @example
- * const { data, loading, error } = useGetFaqAccordionQuery({
+ * const { data, loading, error } = useGetLogoQuery({
  *   variables: {
  *   },
  * });
  */
-export function useGetFaqAccordionQuery(baseOptions?: Apollo.QueryHookOptions<GetFaqAccordionQuery, GetFaqAccordionQueryVariables>) {
+export function useGetLogoQuery(baseOptions?: Apollo.QueryHookOptions<GetLogoQuery, GetLogoQueryVariables>) {
         const options = {...defaultOptions, ...baseOptions}
-        return Apollo.useQuery<GetFaqAccordionQuery, GetFaqAccordionQueryVariables>(GetFaqAccordionDocument, options);
+        return Apollo.useQuery<GetLogoQuery, GetLogoQueryVariables>(GetLogoDocument, options);
       }
-export function useGetFaqAccordionLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetFaqAccordionQuery, GetFaqAccordionQueryVariables>) {
+export function useGetLogoLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetLogoQuery, GetLogoQueryVariables>) {
           const options = {...defaultOptions, ...baseOptions}
-          return Apollo.useLazyQuery<GetFaqAccordionQuery, GetFaqAccordionQueryVariables>(GetFaqAccordionDocument, options);
+          return Apollo.useLazyQuery<GetLogoQuery, GetLogoQueryVariables>(GetLogoDocument, options);
         }
-export type GetFaqAccordionQueryHookResult = ReturnType<typeof useGetFaqAccordionQuery>;
-export type GetFaqAccordionLazyQueryHookResult = ReturnType<typeof useGetFaqAccordionLazyQuery>;
-export type GetFaqAccordionQueryResult = Apollo.QueryResult<GetFaqAccordionQuery, GetFaqAccordionQueryVariables>;
-export const GetInstallationCardsDocument = gql`
-    query getInstallationCards {
-  page(id: "63qo1mKjZ1QZIfKzoCLPYa") {
-    installationCardsCollection {
-      items {
-        sys {
-          id
-        }
-        logo {
-          title
-          description
-          url
-          width
-          height
-        }
-        title
-        version
-        installLink {
-          label
-          link
-          isPrimaryCta
-        }
-      }
-    }
-  }
-}
-    `;
-
-/**
- * __useGetInstallationCardsQuery__
- *
- * To run a query within a React component, call `useGetInstallationCardsQuery` and pass it any options that fit your needs.
- * When your component renders, `useGetInstallationCardsQuery` returns an object from Apollo Client that contains loading, error, and data properties
- * you can use to render your UI.
- *
- * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
- *
- * @example
- * const { data, loading, error } = useGetInstallationCardsQuery({
- *   variables: {
- *   },
- * });
- */
-export function useGetInstallationCardsQuery(baseOptions?: Apollo.QueryHookOptions<GetInstallationCardsQuery, GetInstallationCardsQueryVariables>) {
-        const options = {...defaultOptions, ...baseOptions}
-        return Apollo.useQuery<GetInstallationCardsQuery, GetInstallationCardsQueryVariables>(GetInstallationCardsDocument, options);
-      }
-export function useGetInstallationCardsLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetInstallationCardsQuery, GetInstallationCardsQueryVariables>) {
-          const options = {...defaultOptions, ...baseOptions}
-          return Apollo.useLazyQuery<GetInstallationCardsQuery, GetInstallationCardsQueryVariables>(GetInstallationCardsDocument, options);
-        }
-export type GetInstallationCardsQueryHookResult = ReturnType<typeof useGetInstallationCardsQuery>;
-export type GetInstallationCardsLazyQueryHookResult = ReturnType<typeof useGetInstallationCardsLazyQuery>;
-export type GetInstallationCardsQueryResult = Apollo.QueryResult<GetInstallationCardsQuery, GetInstallationCardsQueryVariables>;
+export type GetLogoQueryHookResult = ReturnType<typeof useGetLogoQuery>;
+export type GetLogoLazyQueryHookResult = ReturnType<typeof useGetLogoLazyQuery>;
+export type GetLogoQueryResult = Apollo.QueryResult<GetLogoQuery, GetLogoQueryVariables>;

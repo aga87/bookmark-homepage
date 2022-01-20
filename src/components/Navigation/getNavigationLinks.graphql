@@ -1,0 +1,14 @@
+query getNavigationLinks {
+  settings(id: "4gDi7WpHy49PbhMSEiSgJF") {
+    navigationBarLinksCollection {
+      items {
+        sys {
+          id
+        }
+        link
+        label
+        isPrimaryCta
+      }
+    }
+  }
+}

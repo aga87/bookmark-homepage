@@ -1,0 +1,14 @@
+query getNavigationFooterLinks {
+  settings(id: "4gDi7WpHy49PbhMSEiSgJF") {
+    footerLinksCollection {
+      items {
+        sys {
+          id
+        }
+        label
+        link
+        isPrimaryCta
+      }
+    }
+  }
+}
