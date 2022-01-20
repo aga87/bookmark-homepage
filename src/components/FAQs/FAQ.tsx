@@ -5,29 +5,34 @@ type FAQProps = {
   question: string;
   answer: string;
   id: string;
+  handleKeyDown: (e: React.KeyboardEvent<HTMLButtonElement>) => void;
 };
 
-const FAQ = ({ question, answer, id }: FAQProps): JSX.Element => {
-  const [isExpanded, setIsExpanded] = useState(false);
+const FAQ = React.forwardRef<HTMLButtonElement, FAQProps>(
+  ({ question, answer, id, handleKeyDown }: FAQProps, ref): JSX.Element => {
+    const [isExpanded, setIsExpanded] = useState(false);
 
-  const handleToggleClick = () => {
-    setIsExpanded(!isExpanded);
-  };
+    const handleToggleClick = () => {
+      setIsExpanded(!isExpanded);
+    };
 
-  return (
-    <div>
-      <ToggleButton
-        label={question}
-        isExpanded={isExpanded}
-        id={id}
-        controlledRegionId={`region-${id}`}
-        handleClick={handleToggleClick}
-      />
-      <div id={`region-${id}`} role='region' aria-labelledby={id}>
-        {isExpanded && <p>{answer}</p>}
+    return (
+      <div>
+        <ToggleButton
+          ref={ref}
+          label={question}
+          isExpanded={isExpanded}
+          id={id}
+          controlledRegionId={`region-${id}`}
+          handleClick={handleToggleClick}
+          handleKeyDown={handleKeyDown}
+        />
+        <div id={`region-${id}`} role='region' aria-labelledby={id}>
+          {isExpanded && <p>{answer}</p>}
+        </div>
       </div>
-    </div>
-  );
-};
+    );
+  }
+);
 
 export default FAQ;

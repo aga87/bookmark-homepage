@@ -7,27 +7,36 @@ type ToggleButtonProps = {
   controlledRegionId: string;
   id: string;
   handleClick: () => void;
+  handleKeyDown: (e: React.KeyboardEvent<HTMLButtonElement>) => void;
 };
 
-const ToggleButton = ({
-  label,
-  isExpanded,
-  controlledRegionId,
-  id,
-  handleClick
-}: ToggleButtonProps): JSX.Element => {
-  return (
-    <button
-      type='button'
-      aria-expanded={isExpanded}
-      aria-controls={controlledRegionId}
-      id={id}
-      onClick={handleClick}
-    >
-      <span>{label}</span>
-      <ArrowIcon />
-    </button>
-  );
-};
+const ToggleButton = React.forwardRef<HTMLButtonElement, ToggleButtonProps>(
+  (
+    {
+      label,
+      isExpanded,
+      controlledRegionId,
+      id,
+      handleClick,
+      handleKeyDown
+    }: ToggleButtonProps,
+    ref
+  ): JSX.Element => {
+    return (
+      <button
+        ref={ref}
+        type='button'
+        aria-expanded={isExpanded}
+        aria-controls={controlledRegionId}
+        id={id}
+        onClick={handleClick}
+        onKeyDown={handleKeyDown}
+      >
+        <span>{label}</span>
+        <ArrowIcon />
+      </button>
+    );
+  }
+);
 
 export default ToggleButton;
