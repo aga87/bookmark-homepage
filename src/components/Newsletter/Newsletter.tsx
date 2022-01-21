@@ -1,5 +1,6 @@
 import React from 'react';
 import { useGetNewsletterQuery } from '../../contentful';
+import Heading from '../nano/Heading';
 import NewsletterForm from './NewsletterForm';
 
 const Newsletter = (): JSX.Element | null => {
@@ -11,7 +12,7 @@ const Newsletter = (): JSX.Element | null => {
   return (
     <section>
       {tagline && <p>{tagline}</p>}
-      {title && <h2>{title}</h2>}
+      {title && <Heading level={2} title={title} variant='secondary' />}
       <NewsletterForm
         emailPlaceholder={inputPlaceholder || ''}
         ctaText={ctaText || 'Submit'}

@@ -52,11 +52,13 @@ const Navigation = (): JSX.Element | null => {
         handleKeyDown={handleDropdownToggleKeyDown}
       />
       {isExpanded && (
-        <ul id='main-nav' aria-labelledby='main-nav-toggle-btn'>
-          {navLinks}
-        </ul>
+        <>
+          <ul id='main-nav' aria-labelledby='main-nav-toggle-btn'>
+            {navLinks}
+          </ul>
+          <NavigationSocialLinks />
+        </>
       )}
-      <NavigationSocialLinks />
     </nav>
   );
 };

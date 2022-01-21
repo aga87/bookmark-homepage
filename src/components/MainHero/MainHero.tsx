@@ -1,6 +1,7 @@
 import React from 'react';
 import { useGetMainHeroQuery } from '../../contentful';
 import CTALink from '../nano/CTALink';
+import Heading from '../nano/Heading';
 
 const MainHero = (): JSX.Element | null => {
   const { loading, error, data } = useGetMainHeroQuery();
@@ -32,7 +33,7 @@ const MainHero = (): JSX.Element | null => {
           height={image.height || ''}
         />
       )}
-      {title && <h1>{title}</h1>}
+      {title && <Heading level={1} title={title} />}
       {description && <p>{description}</p>}
       {CTAs && <ul>{CTAs}</ul>}
     </main>

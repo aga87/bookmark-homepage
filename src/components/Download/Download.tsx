@@ -1,5 +1,6 @@
 import React from 'react';
 import { useGetDownloadIntroQuery } from '../../contentful';
+import Heading from '../nano/Heading';
 
 const Download: React.FC = ({ children }): JSX.Element | null => {
   const { loading, error, data } = useGetDownloadIntroQuery();
@@ -9,7 +10,7 @@ const Download: React.FC = ({ children }): JSX.Element | null => {
 
   return (
     <section>
-      {title && <h2>{title}</h2>}
+      {title && <Heading level={2} title={title} />}
       {description && <p>{description}</p>}
       {children}
     </section>

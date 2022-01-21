@@ -1,5 +1,6 @@
 import React from 'react';
 import { useGetInstallationCardsQuery } from '../../contentful';
+import Heading from '../nano/Heading';
 import CTALink from '../nano/CTALink';
 import { ReactComponent as DottedLine } from '../../svg/bg-dots.svg';
 
@@ -20,8 +21,8 @@ const InstallationCards = () => {
             height={logo.height || ''}
           />
         )}
-        <h3>{title}</h3>
-        <p>{version}</p>
+        {title && <Heading level={3} title={title} />}
+        {version && <p>{version}</p>}
         <DottedLine />
         {installLink && installLink.link && (
           <CTALink

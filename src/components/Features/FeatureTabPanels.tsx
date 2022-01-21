@@ -1,5 +1,6 @@
 import React from 'react';
 import { useGetFeatureTabPanelsQuery } from '../../contentful';
+import Heading from '../nano/Heading';
 import CTALink from '../nano/CTALink';
 
 type FeatureTabPanelsProps = {
@@ -41,7 +42,7 @@ const FeatureTabPanels = ({
             height={image.height || ''}
           />
         )}
-        {title && <h3>{title}</h3>}
+        {title && <Heading level={3} title={title} />}
         {description && <p>{description}</p>}
         {tabCTAs && <ul>{tabCTAs}</ul>}
       </div>
