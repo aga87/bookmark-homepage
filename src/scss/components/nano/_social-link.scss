@@ -1,0 +1,12 @@
+.social-link {
+  &:hover,
+  &:focus {
+    svg {
+      fill: $soft-red;
+    }
+  }
+
+  svg {
+    vertical-align: middle;
+  }
+}

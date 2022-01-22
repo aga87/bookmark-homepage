@@ -1,0 +1,12 @@
+.l-navigation-social-links {
+  list-style-type: none;
+  display: flex;
+  flex-flow: row-reverse;
+  justify-content: space-between;
+  width: 90px;
+  margin: 0 auto;
+
+  @include screen-min($breakpoint) {
+    width: 100px;
+  }
+}

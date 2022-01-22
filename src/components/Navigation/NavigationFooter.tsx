@@ -11,7 +11,7 @@ const NavigationFooter = (): JSX.Element | null => {
     const { sys, link, label, isPrimaryCta } = item;
 
     return (
-      <li key={sys.id}>
+      <li key={sys.id} className='l-navigation-footer__list-item'>
         <NavLink
           link={link}
           label={label}
@@ -23,8 +23,11 @@ const NavigationFooter = (): JSX.Element | null => {
 
   if (loading || error || !footerLinks) return null;
   return (
-    <nav aria-label='secondary'>
-      <ul>{footerLinks}</ul>
+    <nav
+      className='c-navigation-footer l-navigation-footer'
+      aria-label='secondary'
+    >
+      <ul className='l-navigation-footer__list'>{footerLinks}</ul>
       <NavigationSocialLinks />
     </nav>
   );

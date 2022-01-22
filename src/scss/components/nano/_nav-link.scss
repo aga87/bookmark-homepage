@@ -1,4 +1,12 @@
 .nav-link {
+  display: block;
+  text-decoration: none;
+  font-variant: small-caps;
+  letter-spacing: 2px;
+  color: $white;
+  padding: 15px 22px;
+
+  &:hover,
   &:focus {
     color: $soft-red;
   }
