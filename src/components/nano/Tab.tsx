@@ -19,12 +19,17 @@ const Tab = React.forwardRef<HTMLButtonElement, TabProps>(
       ref={ref}
       onClick={handleClick}
       onKeyDown={handleKeyDown}
-      className={selected ? 'tab tab--selected' : 'tab'}
+      className='tab'
       aria-selected={selected}
       tabIndex={selected ? 0 : -1} // Roving tabindex
       aria-controls={tabPanelId}
     >
-      {title}
+      <span className='tab__title'>
+        {title}
+        <span
+          className={`tab__selection ${selected && 'tab__selection--selected'}`}
+        />
+      </span>
     </button>
   )
 );

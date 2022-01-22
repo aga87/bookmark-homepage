@@ -33,24 +33,47 @@ const FeatureTabPanels = ({
     });
 
     return (
-      <div role='tabpanel' id={id} key={id}>
+      <div
+        className='l-feature-tabpanels__tabpanel'
+        role='tabpanel'
+        id={id}
+        key={id}
+      >
         {image && image.url && (
-          <img
-            src={image.url}
-            alt={image.description || ''}
-            width={image.width || ''}
-            height={image.height || ''}
-          />
+          <div
+            className={`l-feature-tabpanels__tabpanel-img l-feature-tabpanels__tabpanel-img--${
+              i + 1
+            }`}
+          >
+            <img
+              src={image.url}
+              alt={image.description || ''}
+              width={image.width || ''}
+              height={image.height || ''}
+            />
+          </div>
         )}
-        {title && <Heading level={3} title={title} />}
-        {description && <p>{description}</p>}
-        {tabCTAs && <ul>{tabCTAs}</ul>}
+        <div className='l-feature-tabpanels__tabpanel-content'>
+          {title && (
+            <div className='l-feature-tabpanels__tabpanel-title'>
+              <Heading level={2} title={title} />
+            </div>
+          )}
+          {description && (
+            <p className='l-feature-tabpanels__tabpanel-desc'>{description}</p>
+          )}
+          {tabCTAs && (
+            <ul className='l-feature-tabpanels__tabpanel-ctas'>{tabCTAs}</ul>
+          )}
+        </div>
       </div>
     );
   });
 
   if (loading || error || !tabPanels) return null;
-  return <div>{tabPanels}</div>;
+  return (
+    <div className='c-feature-tabpanels l-feature-tabpanels'>{tabPanels}</div>
+  );
 };
 
 export default FeatureTabPanels;

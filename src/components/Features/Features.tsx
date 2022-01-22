@@ -9,12 +9,12 @@ const Features: React.FC = ({ children }): JSX.Element | null => {
   const { featuresIntro } = data.page;
 
   return (
-    <section>
+    <section className='c-features'>
       {featuresIntro && featuresIntro.title && (
         <Heading level={2} title={featuresIntro.title} />
       )}
       {featuresIntro && featuresIntro.description && (
-        <p>{featuresIntro.description}</p>
+        <p className='c-features__intro'>{featuresIntro.description}</p>
       )}
       {children}
     </section>

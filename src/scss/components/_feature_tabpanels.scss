@@ -1,0 +1,71 @@
+.l-feature-tabpanels {
+  &__tabpanel {
+    @include screen-min($breakpoint) {
+      display: flex;
+      text-align: left;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
+  &__tabpanel-content {
+    @include screen-min($breakpoint) {
+      flex: 0 0 450px;
+    }
+  }
+
+  &__tabpanel-img {
+    @include screen-max($breakpoint) {
+      margin-bottom: 40px;
+    }
+
+    &.l-feature-tabpanels__tabpanel-img--1 {
+      @include screen-min($breakpoint) {
+        flex: 0 0 540px;
+      }
+    }
+
+    &.l-feature-tabpanels__tabpanel-img--2 {
+      @include screen-min($breakpoint) {
+        flex: 0 0 490px;
+      }
+    }
+
+    &.l-feature-tabpanels__tabpanel-img--3 {
+      @include screen-min($breakpoint) {
+        flex: 0 0 520px;
+      }
+    }
+  }
+
+  &__tabpanel-title {
+    margin-bottom: 15px;
+
+    @include screen-min($breakpoint) {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__tabpanel-desc {
+    @include screen-min($breakpoint) {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__tabpanel-ctas {
+    list-style-type: none;
+    display: none;
+
+    @include screen-min($breakpoint) {
+      display: flex; // allow multiple ctas
+    }
+
+    li {
+      &:not(:last-of-type) {
+        @include screen-min($breakpoint) {
+          margin-right: 15px; // allow multiple ctas
+        }
+      }
+    }
+  }
+}
