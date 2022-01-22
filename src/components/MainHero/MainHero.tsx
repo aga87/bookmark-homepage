@@ -12,7 +12,7 @@ const MainHero = (): JSX.Element | null => {
   const CTAs = ctAsCollection?.items.map(cta => {
     if (!cta || !cta.link || !cta.label) return null;
     return (
-      <li key={cta.sys.id}>
+      <li key={cta.sys.id} className='l-main-hero__ctas-cta'>
         <CTALink
           label={cta.label}
           link={cta?.link as string}
@@ -23,19 +23,23 @@ const MainHero = (): JSX.Element | null => {
   });
 
   return (
-    <main>
+    <main className='c-main-hero l-main-hero'>
       {image && image.url && (
-        <img
-          src={image.url}
-          title={image.title || ''}
-          alt={image.description || ''}
-          width={image.width || ''}
-          height={image.height || ''}
-        />
+        <div className='l-main-hero__img'>
+          <img
+            src={image.url}
+            title={image.title || ''}
+            alt={image.description || ''}
+            width={image.width || ''}
+            height={image.height || ''}
+          />
+        </div>
       )}
-      {title && <Heading level={1} title={title} />}
-      {description && <p>{description}</p>}
-      {CTAs && <ul>{CTAs}</ul>}
+      <div className='l-main-hero__content'>
+        {title && <Heading level={1} title={title} />}
+        {description && <p className='l-main-hero__intro'>{description}</p>}
+        {CTAs && <ul className='l-main-hero__ctas'>{CTAs}</ul>}
+      </div>
     </main>
   );
 };
