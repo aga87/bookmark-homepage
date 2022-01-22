@@ -1,0 +1,21 @@
+.t1 {
+  line-height: normal; // not in specs;
+
+  @include screen-min($breakpoint) {
+    font-size: 48px;
+  }
+}
+
+.t2 {
+  font-size: 25px;
+  line-height: normal; // not in specs;
+
+  @include screen-min($breakpoint) {
+    font-size: 32px;
+  }
+}
+
+.t3 {
+  font-size: 20px;
+  line-height: normal; // not in specs;
+}
