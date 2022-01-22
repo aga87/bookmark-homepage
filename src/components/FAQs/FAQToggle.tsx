@@ -1,7 +1,7 @@
 import React from 'react';
 import { ReactComponent as ArrowIcon } from '../../svg/icon-arrow.svg';
 
-type ToggleButtonProps = {
+type FAQToggleProps = {
   label: string;
   isExpanded: boolean;
   controlledRegionId: string;
@@ -10,7 +10,7 @@ type ToggleButtonProps = {
   handleKeyDown: (e: React.KeyboardEvent<HTMLButtonElement>) => void;
 };
 
-const ToggleButton = React.forwardRef<HTMLButtonElement, ToggleButtonProps>(
+const FAQToggle = React.forwardRef<HTMLButtonElement, FAQToggleProps>(
   (
     {
       label,
@@ -19,24 +19,27 @@ const ToggleButton = React.forwardRef<HTMLButtonElement, ToggleButtonProps>(
       id,
       handleClick,
       handleKeyDown
-    }: ToggleButtonProps,
+    }: FAQToggleProps,
     ref
   ): JSX.Element => {
     return (
       <button
         ref={ref}
         type='button'
+        className={
+          isExpanded ? 'faq-toggle faq-toggle--expanded' : 'faq-toggle'
+        }
         aria-expanded={isExpanded}
         aria-controls={controlledRegionId}
         id={id}
         onClick={handleClick}
         onKeyDown={handleKeyDown}
       >
-        <span>{label}</span>
-        <ArrowIcon />
+        <span className='toggle-button__label'>{label}</span>
+        <ArrowIcon stroke='#5267DF' />
       </button>
     );
   }
 );
 
-export default ToggleButton;
+export default FAQToggle;
