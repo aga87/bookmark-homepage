@@ -9,10 +9,10 @@ const Download: React.FC = ({ children }): JSX.Element | null => {
   const { title, description } = data.page.downloadIntro;
 
   return (
-    <section>
+    <section className='c-download'>
       {title && <Heading level={2} title={title} />}
-      {description && <p>{description}</p>}
-      {children}
+      {description && <p className='c-download__intro'>{description}</p>}
+      <div className='c-download__content'>{children}</div>
     </section>
   );
 };

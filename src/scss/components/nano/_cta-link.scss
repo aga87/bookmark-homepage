@@ -1,0 +1,40 @@
+.cta-link {
+  display: inline-block;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 14px;
+  color: $white;
+  padding: 10px 18px;
+  border: 2px solid transparent;
+  border-radius: $border-radius;
+  background-color: $soft-blue;
+  box-shadow: 0 10px 16px -16px $soft-blue;
+
+  @include screen-min($breakpoint) {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+
+  &.cta-link--wide {
+    width: 100%;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: $white;
+    border-color: $soft-blue;
+    color: $soft-blue;
+  }
+
+  &.cta-link--secondary {
+    background-color: $light-grey;
+    color: $grayish-blue;
+
+    &:hover,
+    &:focus {
+      color: $very-dark-blue;
+      background-color: $white;
+      border-color: $very-dark-blue;
+    }
+  }
+}
