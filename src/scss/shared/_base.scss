@@ -1,7 +1,9 @@
 html {
   font-size: 100%;
-  // Base font-size of 18px as per spec does not seem to match the design
-  // font-size: 112.5%;
+
+  @include screen-min($breakpoint) {
+    font-size: 112.5%;
+  }
 }
 
 body {
@@ -9,4 +11,9 @@ body {
   color: $grayish-blue;
   font-family: $font-stack;
   line-height: $blh;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
 }

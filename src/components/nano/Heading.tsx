@@ -16,9 +16,9 @@ const Heading = ({
     className = `${className} ${className}--${variant}`;
   }
 
-  if (level === 1) return <h1 className={className}>{title}</h1>;
-  if (level === 2) return <h2 className={className}>{title}</h2>;
-  return <h3 className={className}>{title}</h3>;
+  if (level === 1) return <h1 className={`${className} t1`}>{title}</h1>;
+  if (level === 2) return <h2 className={`${className} t2`}>{title}</h2>;
+  return <h3 className={`${className} t3`}>{title}</h3>;
 };
 
 export default Heading;

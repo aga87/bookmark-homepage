@@ -10,16 +10,18 @@ import Newsletter from '../components/Newsletter/Newsletter';
 
 const Homepage = (): JSX.Element => (
   <div>
-    <MainHero />
-    <Features>
-      <FeatureTabs />
-    </Features>
-    <Download>
-      <InstallationCards />
-    </Download>
-    <FAQs>
-      <FAQAccordion />
-    </FAQs>
+    <div className='l-wrapper'>
+      <MainHero />
+      <Features>
+        <FeatureTabs />
+      </Features>
+      <Download>
+        <InstallationCards />
+      </Download>
+      <FAQs>
+        <FAQAccordion />
+      </FAQs>
+    </div>
     <Newsletter />
   </div>
 );
