@@ -10,13 +10,27 @@ const Newsletter = (): JSX.Element | null => {
   const { title, tagline, inputPlaceholder, ctaText } = data.page.newsletter;
 
   return (
-    <section>
-      {tagline && <p>{tagline}</p>}
-      {title && <Heading level={2} title={title} variant='secondary' />}
-      <NewsletterForm
-        emailPlaceholder={inputPlaceholder || ''}
-        ctaText={ctaText || 'Submit'}
-      />
+    <section className='c-newsletter'>
+      <div className='l-wrapper'>
+        <div className='l-newsletter'>
+          <div className='l-newsletter__content'>
+            {tagline && (
+              <p className='c-newsletter__tagline l-newsletter__tagline'>
+                {tagline}
+              </p>
+            )}
+            {title && (
+              <div className='l-newsletter__title'>
+                <Heading level={2} title={title} variant='secondary' />
+              </div>
+            )}
+            <NewsletterForm
+              emailPlaceholder={inputPlaceholder || ''}
+              ctaText={ctaText || 'Submit'}
+            />
+          </div>
+        </div>
+      </div>
     </section>
   );
 };

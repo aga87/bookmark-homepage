@@ -1,0 +1,18 @@
+.submit-button {
+  width: 100%;
+  padding: 12px 0;
+  font-family: inherit;
+  line-height: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  color: $white;
+  background-color: $soft-red;
+  border: 2px solid $soft-red;
+  border-radius: $border-radius;
+
+  &:hover {
+    background-color: $white;
+    color: $soft-red;
+    cursor: pointer;
+  }
+}
