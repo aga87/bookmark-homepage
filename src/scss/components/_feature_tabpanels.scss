@@ -16,7 +16,7 @@
 
   &__tabpanel-img {
     @include screen-max($breakpoint) {
-      margin-bottom: 40px;
+      margin-bottom: 60px;
     }
 
     &.l-feature-tabpanels__tabpanel-img--1 {

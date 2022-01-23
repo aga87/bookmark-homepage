@@ -1,6 +1,8 @@
 .l-main-hero {
-  padding: 20px 0 120px;
+  padding: 20px 0 140px;
+
   @include screen-min($breakpoint) {
+    padding: 20px 0 100px;
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-between;
@@ -39,7 +41,11 @@
   }
 
   &__intro {
-    padding: 20px 0 30px;
+    padding: 15px 0 30px;
+
+    @include screen-min($breakpoint) {
+      padding: 20px 0 30px;
+    }
   }
 
   &__ctas {

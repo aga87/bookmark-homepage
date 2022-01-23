@@ -4,7 +4,8 @@
   padding-top: $selection-height;
   font-size: 18px;
   font-family: inherit;
-  line-height: 3.2;
+  line-height: 3;
+  color: $grayish-blue;
   background-color: $white;
   border: none;
   border-bottom: $light-grey-line;
@@ -12,6 +13,10 @@
   &:hover {
     color: $soft-red;
     cursor: pointer;
+  }
+
+  &.tab--selected {
+    color: $very-dark-blue;
   }
 
   &__title {
