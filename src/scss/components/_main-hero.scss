@@ -1,7 +1,7 @@
 .c-main-hero {
   background-image: url('../../svg/bg.svg');
   background-repeat: no-repeat;
-  background-position-y: 75px;
+  background-position-y: 80px;
   background-position-x: 20vw;
   text-align: center;
 
@@ -43,7 +43,7 @@
       max-width: 365px;
       margin: 0 auto;
       padding: 0 5px;
-      padding-bottom: 65px;
+      padding-bottom: 50px;
     }
 
     @include screen-min($breakpoint) {

@@ -1,6 +1,6 @@
-<svg xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none' height="190">
-  <circle cx='95' cy='95' r='95' fill='#5368df' />
-  <rect x='95' width='2000' height='190' fill='#5368df' />
+<svg xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none' height="200">
+  <circle cx='100' cy='100' r='100' fill='#5368df' />
+  <rect x='100' width='2000' height='200' fill='#5368df' />
 </svg>
 
 
