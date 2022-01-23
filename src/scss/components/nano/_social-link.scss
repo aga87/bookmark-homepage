@@ -1,6 +1,5 @@
 .social-link {
-  &:hover,
-  &:focus {
+  &:hover {
     svg {
       fill: $soft-red;
     }

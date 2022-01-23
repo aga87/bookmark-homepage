@@ -1,5 +1,7 @@
 .c-navigation-footer {
   font-size: 18px;
+  color: $white;
+
   @include screen-min($breakpoint) {
     font-size: 16px;
   }

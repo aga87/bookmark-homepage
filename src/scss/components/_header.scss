@@ -1,0 +1,16 @@
+.c-header {
+  padding: 40px 0 50px;
+}
+
+.l-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__logo {
+    svg {
+      vertical-align: middle;
+      margin-bottom: 4px;
+    }
+  }
+}

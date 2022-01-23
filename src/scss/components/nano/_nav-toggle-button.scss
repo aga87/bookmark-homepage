@@ -1,0 +1,25 @@
+.nav-toggle-button {
+  background-color: $white;
+  border: none;
+
+  &:hover {
+    cursor: pointer;
+
+    svg {
+      fill: $soft-red;
+    }
+  }
+
+  &.nav-toggle-button--expanded {
+    background-color: transparent;
+    color: $white;
+
+    svg {
+      fill: $white;
+
+      &:hover {
+        fill: $soft-red;
+      }
+    }
+  }
+}

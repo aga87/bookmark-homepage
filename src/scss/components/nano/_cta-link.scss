@@ -19,8 +19,7 @@
     width: 100%;
   }
 
-  &:hover,
-  &:focus {
+  &:hover {
     background-color: $white;
     border-color: $soft-blue;
     color: $soft-blue;
@@ -30,8 +29,7 @@
     background-color: $light-grey;
     color: $grayish-blue;
 
-    &:hover,
-    &:focus {
+    &:hover {
       color: $very-dark-blue;
       background-color: $white;
       border-color: $very-dark-blue;

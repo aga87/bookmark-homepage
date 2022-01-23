@@ -28,6 +28,11 @@ const NavToggleButton = React.forwardRef<
     const label = isExpanded ? 'Close menu' : 'Open menu';
     return (
       <button
+        className={
+          isExpanded
+            ? 'nav-toggle-button nav-toggle-button--expanded'
+            : 'nav-toggle-button'
+        }
         ref={ref}
         type='button'
         onClick={handleClick}

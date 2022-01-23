@@ -1,5 +1,5 @@
 .l-main-hero {
-  padding: 80px 0;
+  padding: 20px 0 120px;
   @include screen-min($breakpoint) {
     display: flex;
     flex-direction: row-reverse;
@@ -23,7 +23,9 @@
     @include screen-max($breakpoint) {
       max-width: 480px;
       margin: 0 auto;
+      padding-bottom: 65px;
     }
+
     @include screen-min($breakpoint) {
       flex: 0 0 675px;
       margin-right: -125px;
