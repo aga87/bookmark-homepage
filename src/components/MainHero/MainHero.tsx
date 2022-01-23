@@ -23,24 +23,26 @@ const MainHero = (): JSX.Element | null => {
   });
 
   return (
-    <main className='c-main-hero l-main-hero'>
-      {image && image.url && (
-        <div className='l-main-hero__img'>
-          <img
-            src={image.url}
-            title={image.title || ''}
-            alt={image.description || ''}
-            width={image.width || ''}
-            height={image.height || ''}
-          />
+    <div className='c-main-hero'>
+      <main className=' l-main-hero'>
+        {image && image.url && (
+          <div className='l-main-hero__img'>
+            <img
+              src={image.url}
+              title={image.title || ''}
+              alt={image.description || ''}
+              width={image.width || ''}
+              height={image.height || ''}
+            />
+          </div>
+        )}
+        <div className='l-main-hero__content'>
+          {title && <Heading level={1} title={title} />}
+          {description && <p className='l-main-hero__intro'>{description}</p>}
+          {CTAs && <ul className='l-main-hero__ctas'>{CTAs}</ul>}
         </div>
-      )}
-      <div className='l-main-hero__content'>
-        {title && <Heading level={1} title={title} />}
-        {description && <p className='l-main-hero__intro'>{description}</p>}
-        {CTAs && <ul className='l-main-hero__ctas'>{CTAs}</ul>}
-      </div>
-    </main>
+      </main>
+    </div>
   );
 };
 

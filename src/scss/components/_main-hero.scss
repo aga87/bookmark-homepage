@@ -1,3 +1,17 @@
+.c-main-hero {
+  background-image: url('../../svg/bg.svg');
+  background-repeat: no-repeat;
+  background-position-y: 75px;
+  background-position-x: 20vw;
+  text-align: center;
+
+  @include screen-min($breakpoint) {
+    background-image: url('../../svg/bg-desktop.svg');
+    background-position-y: 168px;
+    background-position-x: 65vw;
+  }
+}
+
 .l-main-hero {
   padding: 20px 0 140px;
 
@@ -8,12 +22,15 @@
     justify-content: space-between;
     align-items: flex-start;
     text-align: left;
+    max-width: $wrapper-width;
+    margin: 0 auto;
   }
 
   &__content {
     @include screen-max($breakpoint) {
       max-width: 480px;
       margin: 0 auto;
+      padding: 0 $mobile-padding;
     }
     @include screen-min($breakpoint) {
       padding-top: 80px;
@@ -23,8 +40,9 @@
 
   &__img {
     @include screen-max($breakpoint) {
-      max-width: 480px;
+      max-width: 365px;
       margin: 0 auto;
+      padding: 0 5px;
       padding-bottom: 65px;
     }
 
