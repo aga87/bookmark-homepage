@@ -1,0 +1,22 @@
+.c-download {
+  padding-bottom: 120px;
+
+  @include screen-min($breakpoint) {
+    padding-bottom: 130px;
+  }
+
+  &__intro {
+    max-width: 540px;
+    margin: 0 auto;
+    padding: 15px 0 40px;
+
+    @include screen-min($breakpoint) {
+      padding: 20px 0 60px;
+    }
+  }
+
+  &__content {
+    max-width: 920px;
+    margin: 0 auto;
+  }
+}

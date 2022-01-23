@@ -1,0 +1,17 @@
+.c-features {
+  padding-bottom: 160px;
+
+  @include screen-min($breakpoint) {
+    padding-bottom: 200px;
+  }
+
+  &__intro {
+    max-width: 540px;
+    margin: 0 auto;
+    padding: 15px 0 40px;
+
+    @include screen-min($breakpoint) {
+      padding: 20px 0 60px;
+    }
+  }
+}

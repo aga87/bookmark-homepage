@@ -20,7 +20,7 @@ const FeatureTabs = (): JSX.Element | null => {
   const tabs = data?.page?.featureTabsCollection?.items.map((item, i) => {
     if (!item?.tabContent || !item?.tabTitle) return null;
     return (
-      <li key={item.tabContent.sys.id}>
+      <li key={item.tabContent.sys.id} className='l-feature-tabs__list-item'>
         <Tab
           ref={ref => {
             widgetItemsRefs.current[i] = ref;
@@ -37,9 +37,13 @@ const FeatureTabs = (): JSX.Element | null => {
 
   if (loading || error || !tabs) return null;
   return (
-    <div>
-      <ul role='tablist'>{tabs}</ul>
-      <FeatureTabPanels selectedTab={selectedTab} />
+    <div className='l-feature-tabs'>
+      <div className='l-feature-tabs__content'>
+        <ul className='l-feature-tabs__list' role='tablist'>
+          {tabs}
+        </ul>
+        <FeatureTabPanels selectedTab={selectedTab} />
+      </div>
     </div>
   );
 };

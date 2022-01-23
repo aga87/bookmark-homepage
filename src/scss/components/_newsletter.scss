@@ -1,0 +1,40 @@
+.c-newsletter {
+  background-color: $soft-blue;
+  color: $white;
+  padding: 70px 0 40px;
+
+  @include screen-min($breakpoint) {
+    padding: 70px 0;
+  }
+
+  &__tagline {
+    color: $white;
+    font-weight: 500;
+    font-size: 16px;
+    font-variant: small-caps;
+    letter-spacing: 4px;
+  }
+}
+
+.l-newsletter {
+  &__content {
+    max-width: 500px;
+    margin: 0 auto;
+
+    @include screen-min($breakpoint) {
+      max-width: 450px;
+    }
+  }
+
+  &__tagline {
+    margin-bottom: 15px;
+
+    @include screen-min($breakpoint) {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 40px;
+  }
+}

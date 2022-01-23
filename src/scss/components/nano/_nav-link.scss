@@ -1,5 +1,36 @@
 .nav-link {
-  &:focus {
+  display: block;
+  text-decoration: none;
+  font-variant: small-caps;
+  letter-spacing: 2px;
+  color: inherit;
+  padding: 10px 18px;
+
+  &:hover {
     color: $soft-red;
+  }
+
+  &.nav-link--primary {
+    border-radius: $border-radius;
+    border: 2px solid transparent;
+
+    @include screen-max($breakpoint) {
+      font-weight: bold;
+      border-color: $white;
+      padding: 8px;
+    }
+
+    @include screen-min($breakpoint) {
+      color: $white;
+      border-color: $soft-red;
+      background-color: $soft-red;
+      box-shadow: 0 10px 16px -16px $soft-blue;
+
+      &:hover {
+        color: $soft-red;
+        background-color: $white;
+        border-color: $soft-red;
+      }
+    }
   }
 }

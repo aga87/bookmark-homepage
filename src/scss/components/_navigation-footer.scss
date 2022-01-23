@@ -1,0 +1,42 @@
+.c-navigation-footer {
+  font-size: 18px;
+  color: $white;
+
+  @include screen-min($breakpoint) {
+    font-size: 16px;
+  }
+}
+
+.l-navigation-footer {
+  @include screen-min($breakpoint) {
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+
+  &__list {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+
+    @include screen-max($breakpoint) {
+      margin-bottom: 30px;
+    }
+
+    @include screen-min($breakpoint) {
+      flex-direction: row;
+      flex: 100% 1 0;
+    }
+  }
+
+  // Corrent wrong content order in the API
+  &__list-item {
+    &:last-of-type {
+      order: 2;
+    }
+
+    &:nth-of-type(2) {
+      order: 3;
+    }
+  }
+}

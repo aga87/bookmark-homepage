@@ -1,0 +1,30 @@
+.c-footer {
+  background-color: $very-dark-blue;
+  padding: 40px 0;
+
+  @include screen-min($breakpoint) {
+    padding: 25px 0;
+  }
+}
+
+.l-footer {
+  width: 100%;
+
+  @include screen-min($breakpoint) {
+    display: flex;
+    align-items: center;
+  }
+
+  &__logo {
+    margin-bottom: 15px;
+
+    @include screen-min($breakpoint) {
+      margin-right: 30px;
+      margin-bottom: 3px;
+
+      > svg {
+        vertical-align: middle;
+      }
+    }
+  }
+}

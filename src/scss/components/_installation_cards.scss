@@ -1,0 +1,61 @@
+.l-installation-cards {
+  @include screen-min($breakpoint) {
+    display: flex;
+    align-items: flex-start;
+  }
+
+  &__card {
+    width: 280px;
+    margin: 0 auto;
+
+    &:not(:last-of-type) {
+      margin-bottom: 40px;
+
+      @include screen-min($breakpoint) {
+        margin-bottom: 0;
+      }
+    }
+
+    &:nth-of-type(2) {
+      @include screen-min($breakpoint) {
+        margin-top: 45px;
+      }
+    }
+
+    &:last-of-type {
+      @include screen-min($breakpoint) {
+        margin-top: 90px;
+      }
+    }
+  }
+}
+
+.c-installation-cards {
+  list-style-type: none;
+
+  &__card {
+    border-radius: $border-radius;
+    box-shadow: 0px 8px 30px -20px $soft-blue;
+  }
+
+  &__card-top {
+    padding: 40px 20px 20px;
+  }
+
+  &__card-bottom {
+    padding: 20px;
+  }
+
+  &__card-img {
+    width: 100px;
+    margin-bottom: 20px;
+  }
+
+  &__card-title {
+    margin-bottom: 10px;
+  }
+
+  &__card-version {
+    font-size: 15px;
+  }
+}

@@ -13,8 +13,8 @@ const NavLink = React.forwardRef<HTMLAnchorElement, NavLinkProps>(
     ref
   ): JSX.Element => {
     let className = 'nav-link';
-    if (!isPrimary) {
-      className = `${className} ${className}--secondary`;
+    if (isPrimary) {
+      className = `${className} ${className}--primary`;
     }
 
     return (

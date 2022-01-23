@@ -1,0 +1,84 @@
+.c-main-hero {
+  background-image: url('../../svg/bg.svg');
+  background-repeat: no-repeat;
+  background-position-y: 80px;
+  background-position-x: 20vw;
+  text-align: center;
+
+  @include screen-min($breakpoint) {
+    background-image: url('../../svg/bg-desktop.svg');
+    background-position-y: 168px;
+    background-position-x: 65vw;
+  }
+}
+
+.l-main-hero {
+  padding: 20px 0 140px;
+
+  @include screen-min($breakpoint) {
+    padding: 20px 0 100px;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: flex-start;
+    text-align: left;
+    max-width: $wrapper-width;
+    margin: 0 auto;
+  }
+
+  &__content {
+    @include screen-max($breakpoint) {
+      max-width: 480px;
+      margin: 0 auto;
+      padding: 0 $mobile-padding;
+    }
+    @include screen-min($breakpoint) {
+      padding-top: 80px;
+      flex: 0 0 500px;
+    }
+  }
+
+  &__img {
+    @include screen-max($breakpoint) {
+      max-width: 365px;
+      margin: 0 auto;
+      padding: 0 5px;
+      padding-bottom: 50px;
+    }
+
+    @include screen-min($breakpoint) {
+      flex: 0 0 675px;
+      margin-right: -125px;
+    }
+
+    @include screen-range($breakpoint, 1400px) {
+      flex: 0 0 600px;
+      margin-right: -25px;
+      margin-top: 40px;
+    }
+  }
+
+  &__intro {
+    padding: 15px 0 30px;
+
+    @include screen-min($breakpoint) {
+      padding: 20px 0 30px;
+    }
+  }
+
+  &__ctas {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+
+    @include screen-min($breakpoint) {
+      justify-content: flex-start;
+    }
+  }
+
+  &__ctas-cta {
+    &:first-of-type {
+      margin-right: 15px;
+    }
+  }
+}

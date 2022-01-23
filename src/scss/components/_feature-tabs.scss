@@ -1,0 +1,27 @@
+.l-feature-tabs {
+  &__content {
+    @include screen-max($breakpoint) {
+      max-width: 540px;
+      margin: 0 auto;
+    }
+  }
+
+  &__list {
+    list-style-type: none;
+    border-top: $light-grey-line;
+    margin-bottom: 80px;
+
+    @include screen-min($breakpoint) {
+      display: flex;
+      justify-content: stretch;
+      max-width: 730px;
+      margin: 0 auto;
+      margin-bottom: 80px;
+      border-top: none;
+    }
+  }
+
+  &__list-item {
+    flex-basis: 33.3%;
+  }
+}

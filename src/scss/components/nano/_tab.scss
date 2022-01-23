@@ -1,9 +1,45 @@
 .tab {
-  &:hover,
-  &:focus {
+  $selection-height: 4px;
+  width: 100%;
+  padding-top: $selection-height;
+  font-size: 18px;
+  font-family: inherit;
+  line-height: 3;
+  color: $grayish-blue;
+  background-color: $white;
+  border: none;
+  border-bottom: $light-grey-line;
+
+  &:hover {
     color: $soft-red;
+    cursor: pointer;
   }
+
   &.tab--selected {
-    border-bottom: 2px solid $soft-red;
+    color: $very-dark-blue;
+  }
+
+  &__title {
+    display: inline-block;
+
+    @include screen-min($breakpoint) {
+      display: block;
+    }
+  }
+
+  &__selection {
+    display: block;
+    margin: 0 auto;
+    width: 90%;
+    height: $selection-height;
+    background-color: transparent;
+
+    @include screen-min($breakpoint) {
+      width: 100%;
+    }
+
+    &.tab__selection--selected {
+      background-color: $soft-red;
+    }
   }
 }

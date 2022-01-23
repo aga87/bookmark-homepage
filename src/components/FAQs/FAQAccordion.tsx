@@ -23,7 +23,8 @@ const FAQAccordion = () => {
             ref={ref => {
               widgetItemsRefs.current[i] = ref;
             }}
-            question={question}
+            // Workaround the content typo in the API
+            question={i === 0 ? 'What is Bookmark?' : question}
             answer={answer}
             id={id}
             handleKeyDown={handleKeyDown}

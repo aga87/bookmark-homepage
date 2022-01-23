@@ -1,0 +1,8 @@
+.heading {
+  color: $very-dark-blue;
+  font-weight: 500;
+
+  &.heading--secondary {
+    color: $white;
+  }
+}

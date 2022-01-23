@@ -1,0 +1,29 @@
+.c-faqs {
+  padding: 0 0 120px;
+
+  @include screen-min($breakpoint) {
+    padding: 0 0 150px;
+  }
+
+  &__content {
+    max-width: 534px;
+    margin: 0 auto;
+  }
+
+  &__intro {
+    padding: 15px 0 40px;
+
+    @include screen-min($breakpoint) {
+      padding: 20px 0 60px;
+    }
+  }
+
+  &__accordion {
+    padding-bottom: 50px;
+
+    @include screen-min($breakpoint) {
+      border-top: $light-grey-line;
+      padding-bottom: 55px;
+    }
+  }
+}

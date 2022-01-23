@@ -1,0 +1,12 @@
+.c-faq {
+  &__answer {
+    text-align: left;
+    line-height: 2;
+    border-bottom: $light-grey-line;
+    padding: 10px 0 30px;
+
+    @include screen-min($breakpoint) {
+      font-size: 16px;
+    }
+  }
+}
